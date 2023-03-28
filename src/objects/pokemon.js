@@ -4,6 +4,7 @@ export const Pokemon = {
     type: "",
     description: "",
     moves: [],
+    abilities: [],
 
     setInfos(PokemonInfos) {
         this.name = PokemonInfos.name;

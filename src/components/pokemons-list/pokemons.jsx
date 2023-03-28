@@ -1,6 +1,8 @@
 import { Pokemon } from "../pokemon/pokemon"
 import styled from "styled-components"
-import { getPokemonInfos } from "../../assets/services/getPokemonInfos"
+import { getPokemonsInfos } from "../../assets/services/getPokemonsInfos"
+
+let pokemonList = await getPokemonsInfos();
 
 const PokemonList = styled.ul`
     margin: 40px 30px 0 120px;
@@ -10,20 +12,32 @@ const PokemonList = styled.ul`
 `
 
 export const Pokemons = () => {
-    getPokemonInfos();
+    console.log(pokemonList)
 
     return (
+        // <PokemonList>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        //     <Pokemon/>
+        // </ PokemonList>
+
         <PokemonList>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
+            {
+                pokemonList.forEach(
+                    pokemon => {
+                        return (
+                            <h1>porra</h1>
+                        )
+                    }
+                )
+            }
         </ PokemonList>
     )
 }
