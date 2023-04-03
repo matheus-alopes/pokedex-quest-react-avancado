@@ -23,12 +23,15 @@ const LisItemLink = styled.a`
   grid-template-rows: 50px;
 `
 
-const ListItemImage = styled.img`
+const ListItemImage = styled.div`
   width: 120px;
   height: 120px;
   margin-top: 15px;
   grid-area: img;
   border-radius: 50%;
+  ${
+    props => `background-image: url(${props.image})`
+  }
 `
 
 const ListItemName = styled.p`
@@ -48,7 +51,7 @@ export const Pokemon = (props) => {
     return (
           <ListItemContainer>
             <LisItemLink>
-              <ListItemImage src={props.image}/>
+              <ListItemImage  image={props.image} />
 
               <ListItemName>{props.name}</ListItemName>
             
