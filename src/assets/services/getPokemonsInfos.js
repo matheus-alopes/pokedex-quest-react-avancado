@@ -1,4 +1,4 @@
-async function getPokemonsList() {
+export async function getPokemonsLinks() {
     const url = "https://pokeapi.co/api/v2/pokemon/?limit=10";
 
     const response = await fetch(url);
@@ -9,11 +9,11 @@ async function getPokemonsList() {
 }
 
 export async function getPokemonsInfos() {
-    const pokemonListDatas = await getPokemonsList();
+    let listOfPokemons = [];
+    
+    await getPokemonsLinks().then(data => listOfPokemons = data.results)
 
-    let pokemonList = pokemonListDatas.results;
-
-    pokemonList.forEach(
+    listOfPokemons.forEach (
         async pokemon => {
             const url = pokemon.url;
 
@@ -29,7 +29,9 @@ export async function getPokemonsInfos() {
 
             pokemon.moves = data.moves;
         }
-    );
+    )
+    
+    await console.log(listOfPokemons);
 
-    return pokemonList;
+    return listOfPokemons
 }

@@ -29,7 +29,6 @@ const ListItemImage = styled.img`
   margin-top: 15px;
   grid-area: img;
   border-radius: 50%;
-  background-color: yellow;
 `
 
 const ListItemName = styled.p`
@@ -49,7 +48,7 @@ export const Pokemon = (props) => {
     return (
           <ListItemContainer>
             <LisItemLink>
-              <ListItemImage />
+              <ListItemImage src={props.image}/>
 
               <ListItemName>{props.name}</ListItemName>
             

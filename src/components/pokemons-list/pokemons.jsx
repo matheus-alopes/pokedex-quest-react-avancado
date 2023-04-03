@@ -1,8 +1,7 @@
 import { Pokemon } from "../pokemon/pokemon"
 import styled from "styled-components"
-import { getPokemonsInfos } from "../../assets/services/getPokemonsInfos"
-
-let pokemonList = await getPokemonsInfos();
+import { getPokemonsInfos, getPokemonsLinks } from "../../assets/services/getPokemonsInfos"
+import { useEffect, useState } from "react";
 
 const PokemonList = styled.ul`
     margin: 40px 30px 0 120px;
@@ -12,30 +11,24 @@ const PokemonList = styled.ul`
 `
 
 export const Pokemons = () => {
-    console.log(pokemonList)
+    const [pokemonsList, setPokemonsList] = useState([])
 
-    return (
-        // <PokemonList>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        //     <Pokemon/>
-        // </ PokemonList>
+    useEffect (
+        () => {
+            getPokemonsInfos().then(data => setPokemonsList(data))
+        }
+        ,
+        []
+    )
+    
+    getPokemonsInfos();
+    console.log(pokemonsList)
 
+    return (    
         <PokemonList>
             {
-                pokemonList.forEach(
-                    pokemon => {
-                        return (
-                            <h1>porra</h1>
-                        )
-                    }
+                pokemonsList.map(
+                    pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url}/>
                 )
             }
         </ PokemonList>
