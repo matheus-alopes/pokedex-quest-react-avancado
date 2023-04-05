@@ -5,42 +5,30 @@ async function getPokemonsLinks() {
 
     const data = await response.json();
 
-    return data;
+    return data.results;
 }
 
-export async function getPokemonsInfos() {
-    let listOfPokemons = [];
+async function getPokemonInfos(pokemonUrl) {
+     const response = await fetch(pokemonUrl);
+
+     const data = await response.json();
+
+     return data;
+}
+
+export async function getPokemonsList() {
+    const listOfPokemons = await getPokemonsLinks();
+
+    await Promise.all(
+        listOfPokemons.map (
+            async pokemon => {
+                const url = pokemon.url;
     
-    await getPokemonsLinks().then(data => listOfPokemons = data.results)
-
-    listOfPokemons.map (
-        async pokemon => {
-            const url = pokemon.url;
-
-            const response = await fetch(url);
-
-            await response.json()
-                .then(
-                    data => {
-                        pokemon.image = data.sprites.front_default;
-
-                        pokemon.type = data.types;
-
-                        pokemon.abilities = data.abilities;
-
-                        pokemon.moves = data.moves;
-                    }
-                
-                )
-
-            // pokemon.image = data.sprites.front_default;
-
-            // pokemon.type = data.types;
-
-            // pokemon.abilities = data.abilities
-
-            // pokemon.moves = data.moves;
-        }
+                const pokemonData = await getPokemonInfos(url)
+    
+                pokemon.image = pokemonData.sprites.front_default
+            }
+        )
     )
     
     await console.log(listOfPokemons);

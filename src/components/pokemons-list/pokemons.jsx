@@ -1,6 +1,6 @@
 import { Pokemon } from "../pokemon/pokemon"
 import styled from "styled-components"
-import { getPokemonsInfos} from "../../assets/services/getPokemonsInfos"
+import {getPokemonsList} from "../../assets/services/getPokemonsInfos"
 import { useEffect, useState } from "react";
 
 const PokemonList = styled.ul`
@@ -15,29 +15,22 @@ export const Pokemons = () => {
 
     useEffect (
         () => {
-            getPokemonsInfos().then(data => setPokemonsList(data))
+           async function fetchPokemons() {
+            const pokemonsInfos = await getPokemonsList();
+
+            setPokemonsList(pokemonsInfos);
+           }
+
+           fetchPokemons();
         }
         ,
         []
     )
 
-    // useEffect (
-    //     () => {
-    //        async function fetchPokemons() {
-    //             await getPokemonsInfos().then(data => setPokemonsList(data))
-    //        }
-
-    //        fetchPokemons();
-    //     }
-    //     ,
-    //     []
-    // )
-    //     TENTANDO OUTRAS FORMAS DE RENDERIZAR A IMAGEM
-
     return (    
         <PokemonList>
             {   
-                pokemonsList.map(
+                pokemonsList.map (
                     pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url}/>
                 )
             }

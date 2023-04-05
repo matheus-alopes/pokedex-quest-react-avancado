@@ -31,7 +31,9 @@ const ListItemImage = styled.div`
   border-radius: 50%;
   ${
     props => `background-image: url(${props.image})`
-  }
+  };
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const ListItemName = styled.p`
