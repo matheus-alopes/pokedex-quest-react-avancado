@@ -4,7 +4,7 @@ import {getPokemonsList} from "../../assets/services/getPokemonsInfos"
 import { useEffect, useState } from "react";
 
 const PokemonList = styled.ul`
-    margin: 40px 30px 0 120px;
+    margin: 60px 30px 0 120px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -31,7 +31,7 @@ export const Pokemons = () => {
         <PokemonList>
             {   
                 pokemonsList.map (
-                    pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url}/>
+                    pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url} description={pokemon.description}/>
                 )
             }
         </ PokemonList>
