@@ -15,8 +15,6 @@ async function getPokemonDescription(url) {
 
     const listOfDescriptions = descriptionData.flavor_text_entries;
 
-    await console.log(listOfDescriptions);
-
     const description = listOfDescriptions[6].flavor_text;
 
     const filteredDescription = description.replace(/[^a-zA-Z0-9,é,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
@@ -40,13 +38,11 @@ async function getPokemonInfos(pokemonUrl) {
     const pokemonDescription = await getPokemonDescription(descriptionUrl);
     
     data.description = pokemonDescription; 
-    
-    await console.log(data)
 
     return data;
 }
 
-export async function getPokemonsList() {
+async function getPokemonsList() {
     const listOfPokemons = await getPokemonsLinks();
 
     await Promise.all(
@@ -62,8 +58,8 @@ export async function getPokemonsList() {
             }
         )
     )
-    
-    await console.log(listOfPokemons);
 
     return listOfPokemons
 }
+
+export {getPokemonsList}

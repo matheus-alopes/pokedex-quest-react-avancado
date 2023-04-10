@@ -1,5 +1,5 @@
 import pokeball from "./assets/images/pokeball.png"
-import { Pokemons } from "./components/pokemons-list/pokemons"
+import { AppRoutes } from "./pages/routes"
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
           <h1 className="notebook-title">Pokémon Diary</h1>
         </header>
       
-        <Pokemons />
+        <AppRoutes />
       </div>
   )
 }

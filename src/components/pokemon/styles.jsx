@@ -58,18 +58,4 @@ const ListItemDescription = styled.p`
   background-color: rgb(255, 255, 255, 0.7);
 `
 
-export const Pokemon = (props) => {
-    return (
-          <ListItemContainer>
-            <LisItemLink>
-              <ListItemImage  image={props.image} />
-
-              <ListItemName>{props.name}</ListItemName>
-            
-              <ListItemDescription>
-                {props.description}
-              </ListItemDescription>
-            </LisItemLink>
-          </ListItemContainer>
-    )
-}
+export {LisItemLink, ListItemContainer, ListItemDescription, ListItemImage, ListItemName}

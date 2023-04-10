@@ -1,14 +1,7 @@
-import { Pokemon } from "../pokemon/pokemon"
-import styled from "styled-components"
-import {getPokemonsList} from "../../assets/services/getPokemonsInfos"
+import { Pokemon } from "../pokemon"
+import {getPokemonsList} from "../../services/getPokemonsList"
 import { useEffect, useState } from "react";
-
-const PokemonList = styled.ul`
-    margin: 60px 30px 0 120px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-`
+import { PokemonList } from "./styles";
 
 export const Pokemons = () => {
     const [pokemonsList, setPokemonsList] = useState([])
@@ -19,6 +12,8 @@ export const Pokemons = () => {
             const pokemonsInfos = await getPokemonsList();
 
             setPokemonsList(pokemonsInfos);
+
+            await console.log(pokemonsInfos);
            }
 
            fetchPokemons();
@@ -31,7 +26,7 @@ export const Pokemons = () => {
         <PokemonList>
             {   
                 pokemonsList.map (
-                    pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url} description={pokemon.description}/>
+                    pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url} description={pokemon.description} url={pokemon.url} />
                 )
             }
         </ PokemonList>
