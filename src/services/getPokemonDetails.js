@@ -1,5 +1,5 @@
-async function getPokemonDetails(pokemonUrl) {
-    const response = await fetch(pokemonUrl);
+async function getPokemonDetails(pokemonId) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`);
 
     const data = await response.json();
 
@@ -8,7 +8,6 @@ async function getPokemonDetails(pokemonUrl) {
     const pokemon = {
         name: data.name,
     }
-
 
     return pokemon
 }

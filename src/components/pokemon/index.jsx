@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom"
 export const Pokemon = (props) => {
   return (
           <ListItemContainer>
-            <Link to={`/pokemon/${props.name}`}>
+            <Link to={`/pokemon/${props.id}`}>
               <LisItemLink>
                 <ListItemImage  image={props.image} />
 

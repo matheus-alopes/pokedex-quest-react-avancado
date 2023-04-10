@@ -5,19 +5,17 @@ import { getPokemonDetails } from "../../services/getPokemonDetails"
 export const PokemonDetails = () => {
     const {id} = useParams();
 
-    console.log(id);
-
     const [pokemon, setPokemon] = useState({})
     
     useEffect(
         () => {
             async function fetchPokemon() {
-                // const pokemon = await getPokemonDetails();
+                const pokemon = await getPokemonDetails(id);
 
-                // setPokemon(pokemon);
+                setPokemon(pokemon);
             }
 
-            // fetchPokemon();
+            fetchPokemon();
         },
 
         []

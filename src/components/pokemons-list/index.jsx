@@ -26,7 +26,7 @@ export const Pokemons = () => {
         <PokemonList>
             {   
                 pokemonsList.map (
-                    pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url} description={pokemon.description} url={pokemon.url} />
+                    pokemon => <Pokemon name={pokemon.name} image={pokemon.image} key={pokemon.url} description={pokemon.description} id={pokemonsList.indexOf(pokemon) + 1} />
                 )
             }
         </ PokemonList>
