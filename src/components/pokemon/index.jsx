@@ -1,5 +1,5 @@
 import {LisItemLink, ListItemContainer, ListItemDescription, ListItemImage, ListItemName} from "./styles"
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 export const Pokemon = (props) => {
