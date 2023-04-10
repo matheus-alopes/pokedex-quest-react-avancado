@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
 
 export const PokemonDetails = () => {
@@ -23,7 +23,9 @@ export const PokemonDetails = () => {
 
     return (
         <>
-            <button>VOLTAR</button>
+            <Link to="/">
+                <button>VOLTAR</button>
+            </Link>
 
             <div className="pokemon-container">
                 <h1 className="pokemon-name">{pokemon.name}</h1>
