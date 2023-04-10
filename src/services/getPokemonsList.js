@@ -17,7 +17,7 @@ async function getPokemonDescription(url) {
 
     const description = listOfDescriptions[6].flavor_text;
 
-    const filteredDescription = description.replace(/[^a-zA-Z0-9,é,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
+    const filteredDescription = description.replace(/[^a-zA-Z0-9,é,’,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
 
     const pokemonDescription = filteredDescription.replace(/[/é]/g, "É"); //filtrando a descrição final, para ter o caractere "é" em maiúsculo
 
