@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
-import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonContainer } from "./styles"
+import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonText } from "./styles"
 import arrow from "../../assets/images/left-arrow.png"
 
 export const PokemonDetails = () => {
@@ -38,9 +38,11 @@ export const PokemonDetails = () => {
             </BackButtonContainer>
 
             <PokemonContainer>
-                <h1 className="pokemon-name">{pokemon.name}</h1>
+                <PokemonImageContainer>
+                    <PokemonImage src={pokemon.image} />
+                </PokemonImageContainer>
 
-                <div className="pokemon-image-container"></div>
+                <PokemonText>{pokemon.name}</PokemonText>
 
                 <div className="pokemon-type-container"></div>
 

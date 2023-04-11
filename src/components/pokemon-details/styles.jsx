@@ -1,4 +1,5 @@
 import styled, {keyframes} from "styled-components"
+import pokemonDetailsBackground from "../../assets/images/pokemon-details-background.jpg"
 
 const BackButtonContainer = styled.div`
     position: absolute;
@@ -53,11 +54,34 @@ const BackButtonImage = styled.img`
 `
 
 const BackButtonText = styled.p`
-    
+    // color: rgb(0, 150, 255);
 `
 
 const PokemonContainer = styled.div`
-    background-color: red;
+    margin: 60px 30px 0 0;
+    background-color: rgb(115, 147, 179, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
-export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer}
+const PokemonImageContainer = styled.div`
+    width: 600px;
+    height: 200px;
+    background-image: url(${pokemonDetailsBackground});
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center
+
+`
+
+const PokemonImage = styled.img`
+    min-width: 200px;
+`
+
+const PokemonText = styled.h1`
+    text-transform: uppercase;
+`
+
+export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonText}

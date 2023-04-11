@@ -7,6 +7,7 @@ async function getPokemonDetails(pokemonId) {
 
     const pokemon = {
         name: data.name,
+        image: data.sprites.front_default,
     }
 
     return pokemon
