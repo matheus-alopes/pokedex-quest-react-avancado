@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
-import { BackButton, BackButtonContainer, BackButtonText, PokemonContainer } from "./styles"
+import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonContainer } from "./styles"
+import arrow from "../../assets/images/left-arrow.png"
 
 export const PokemonDetails = () => {
     const {id} = useParams();
@@ -26,7 +27,9 @@ export const PokemonDetails = () => {
         <>
             <BackButtonContainer>
                 <Link to="/">
-                    <BackButton></BackButton>
+                    <BackButton>
+                        <BackButtonImage src={arrow}/>
+                    </BackButton>
                 </Link>
 
                 <BackButtonText>
