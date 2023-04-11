@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
-import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonName, PokemonType, PokemonTypeContainer } from "./styles"
+import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList } from "./styles"
 import arrow from "../../assets/images/left-arrow.png"
 
 export const PokemonDetails = () => {
@@ -13,7 +13,7 @@ export const PokemonDetails = () => {
         () => {
             async function fetchPokemon() {
                 const pokemon = await getPokemonDetails(id);
-
+                
                 setPokemon(pokemon);
             }
 
@@ -47,15 +47,13 @@ export const PokemonDetails = () => {
                 <PokemonTypeContainer>
                     <h3>Type:</h3>
 
-                    <ul>
+                    <PokemonTypeList>
                         {
-                            pokemon.types.map(
-                                type => return (
-                                    <PokemonType>{type.type.name}</PokemonType>
-                                )
+                             pokemon.types && pokemon.types.map(
+                                type => <PokemonType key={type.slot}>{type.type.name}</PokemonType>
                             )
                         }
-                    </ul>
+                    </PokemonTypeList>
                 </PokemonTypeContainer>
 
                 <div className="pokemon-moves-container"></div>

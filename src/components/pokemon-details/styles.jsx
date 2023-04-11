@@ -80,16 +80,25 @@ const PokemonImage = styled.img`
 `
 
 const PokemonName = styled.h1`
+    margin: 20px 0 10px 0;
     text-transform: uppercase;
+    // font-weight: bold;
 `
 
 const PokemonTypeContainer = styled.div`
-    // display: flex;
-    // justify-content: center
+    display: flex;
+`
+
+const PokemonTypeList = styled.ul`
+    display: flex;
+    align-items: center;
 `
 
 const PokemonType = styled.li`
-
+    margin: 0 10px;
+    padding: 3px;
+    border: 1px solid black;
+    border-radius: 5px;
 `
 
-export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonType}
+export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType}
