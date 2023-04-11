@@ -36,14 +36,14 @@ const BackButton = styled.button`
 
 const ArrowAnimation = keyframes`
     0% {
-        transform: translateX(4px);
+        transform: translateX(2px);
     }
     50% {
         transform: translateX(-8px);
     }
 
     100% {
-        transform: translateX(4px);
+        transform: translateX(2px);
     }
 `
 
@@ -73,15 +73,23 @@ const PokemonImageContainer = styled.div`
     background-position: bottom;
     display: flex;
     justify-content: center
-
 `
 
 const PokemonImage = styled.img`
     min-width: 200px;
 `
 
-const PokemonText = styled.h1`
+const PokemonName = styled.h1`
     text-transform: uppercase;
 `
 
-export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonText}
+const PokemonTypeContainer = styled.div`
+    // display: flex;
+    // justify-content: center
+`
+
+const PokemonType = styled.li`
+
+`
+
+export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonType}
