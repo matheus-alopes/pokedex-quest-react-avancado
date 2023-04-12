@@ -59,7 +59,7 @@ const BackButtonText = styled.p`
 
 const PokemonContainer = styled.div`
     margin: 60px 30px 0 0;
-    background-color: rgb(115, 147, 179, 0.8);
+    background-color: rgb(115, 147, 179, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +82,6 @@ const PokemonImage = styled.img`
 const PokemonName = styled.h1`
     margin: 20px 0 10px 0;
     text-transform: uppercase;
-    // font-weight: bold;
 `
 
 const PokemonTypeContainer = styled.div`
@@ -101,4 +100,22 @@ const PokemonType = styled.li`
     border-radius: 5px;
 `
 
-export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType}
+const PokemonAbilitiesAndMovesContainer = styled.div`
+    margin-top: 50px;
+    display: flex;
+    gap: 120px;
+`
+
+const PokemonAbilitiesContainer = styled.div`
+    width: 500px;
+    height: 400px;
+    background-color: aqua;
+`
+
+const PokemonMovesContainer = styled.div`
+    width: 400px;
+    height: 400px;
+    background-color: red;
+`
+
+export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonMovesContainer}
