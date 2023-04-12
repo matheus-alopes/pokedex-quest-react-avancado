@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
-import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList } from "./styles"
+import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer } from "./styles"
 import arrow from "../../assets/images/left-arrow.png"
 
 export const PokemonDetails = () => {
@@ -38,27 +38,48 @@ export const PokemonDetails = () => {
             </BackButtonContainer>
 
             <PokemonContainer>
-                <PokemonImageContainer>
-                    <PokemonImage src={pokemon.image} />
-                </PokemonImageContainer>
+                <PokemonImageAndNameContainer>
+                    <PokemonImageContainer>
+                        <PokemonImage src={pokemon.image} />
+                    </PokemonImageContainer>
 
-                <PokemonName>{pokemon.name}</PokemonName>
+                    <div>
+                        <PokemonName>{pokemon.name}</PokemonName>
 
-                <PokemonTypeContainer>
-                    <h3>Type:</h3>
+                        <PokemonTypeContainer>
+                            <h3>Type:</h3>
 
-                    <PokemonTypeList>
-                        {
-                             pokemon.types && pokemon.types.map(
-                                type => <PokemonType key={type.slot}>{type.type.name}</PokemonType>
-                            )
-                        }
-                    </PokemonTypeList>
-                </PokemonTypeContainer>
+                            <PokemonTypeList>
+                                {
+                                    pokemon.types && pokemon.types.map(
+                                        type => <PokemonType key={type.slot}>{type.type.name}</PokemonType>
+                                    )
+                                }
+                            </PokemonTypeList>
+                        </PokemonTypeContainer>
+                    </div>
+                </PokemonImageAndNameContainer>
 
                 <PokemonAbilitiesAndMovesContainer>
                     <PokemonAbilitiesContainer>
-                        
+                        <PokemonAbilitiesTitle>ABILITIES</PokemonAbilitiesTitle>
+
+                        <PokemonAbilities>
+                            {
+                                pokemon.abilities && pokemon.abilities.map(
+                                    ability => 
+                                        <PokemonAbilityContainer key={ability.slot}>
+                                            <PokemonAbilityName>
+                                                {ability.ability.name}
+                                            </PokemonAbilityName>
+
+                                            <PokemonAbilityDescription>
+                                                {ability.description}
+                                            </PokemonAbilityDescription>
+                                        </PokemonAbilityContainer>
+                                )
+                            }
+                        </PokemonAbilities>
                     </PokemonAbilitiesContainer>
 
                     <PokemonMovesContainer>

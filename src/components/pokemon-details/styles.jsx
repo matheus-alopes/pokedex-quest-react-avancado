@@ -58,16 +58,22 @@ const BackButtonText = styled.p`
 `
 
 const PokemonContainer = styled.div`
-    margin: 60px 30px 0 0;
-    background-color: rgb(115, 147, 179, 0.3);
+    margin: 40px 30px 0 30px;
+    // background-color: rgb(115, 147, 179, 0.3);
     display: flex;
     flex-direction: column;
-    align-items: center;
+`
+
+const PokemonImageAndNameContainer = styled.div`
+    display: flex;
+    
 `
 
 const PokemonImageContainer = styled.div`
-    width: 600px;
+    width: 500px;
     height: 200px;
+    margin-right: 40px;
+    border-radius: 5px;
     background-image: url(${pokemonDetailsBackground});
     background-size: cover;
     background-position: bottom;
@@ -80,7 +86,7 @@ const PokemonImage = styled.img`
 `
 
 const PokemonName = styled.h1`
-    margin: 20px 0 10px 0;
+    margin: 15px 0;
     text-transform: uppercase;
 `
 
@@ -101,21 +107,64 @@ const PokemonType = styled.li`
 `
 
 const PokemonAbilitiesAndMovesContainer = styled.div`
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
-    gap: 120px;
+    gap: 100px;
 `
 
 const PokemonAbilitiesContainer = styled.div`
-    width: 500px;
-    height: 400px;
-    background-color: aqua;
+    padding: 20px;
+    min-width: 500px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(115, 147, 179, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
-const PokemonMovesContainer = styled.div`
+const PokemonAbilities = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+`
+
+const PokemonAbilitiesTitle = styled.h2`
+    width: 80%;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid black;
+`
+
+const PokemonAbilityContainer = styled.li`
+    margin: 0 10px;
+    max-width: 200px;
+    height: 160px;
+    max-height: 260px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255, 0.7);
+`
+
+const PokemonAbilityName = styled.p`
+    margin-bottom: 10px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 2px dashed black;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(255, 0, 0, 0.7);
+`
+
+const PokemonAbilityDescription = styled.p`
+    padding: 0 10px;
+`
+
+const PokemonMovesContainer = styled.ul`
     width: 400px;
-    height: 400px;
+    min-height: 200px;
     background-color: red;
 `
 
-export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonMovesContainer}
+export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer}
