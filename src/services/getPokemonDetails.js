@@ -18,6 +18,7 @@ async function getPokemonDetails(pokemonId) {
         image: data.sprites.front_default,
         types: data.types,
         abilities: data.abilities,
+        moves: data.moves,
     }
 
     await Promise.all(

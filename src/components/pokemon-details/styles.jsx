@@ -19,7 +19,7 @@ const BackButton = styled.button`
     margin-bottom: 30px;
     width: 80px;
     height: 80px;
-    border: 1px solid white;
+    border: 1px solid rgb(240,248,255, 0.7);
     border-radius: 50%;
     box-shadow: rgba(28, 129, 237, 0.544) 0px 5px 15px;
     background-color: rgb(240,248,255, 0.7);
@@ -59,9 +59,10 @@ const BackButtonText = styled.p`
 
 const PokemonContainer = styled.div`
     margin: 40px 30px 0 30px;
-    // background-color: rgb(115, 147, 179, 0.3);
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    // display: grid;
+    // grid-template-areas: 
 `
 
 const PokemonImageAndNameContainer = styled.div`
@@ -161,10 +162,33 @@ const PokemonAbilityDescription = styled.p`
     padding: 0 10px;
 `
 
-const PokemonMovesContainer = styled.ul`
-    width: 400px;
-    min-height: 200px;
-    background-color: red;
+const PokemonMovesContainer = styled.div`
+    padding: 20px;
+    max-height: 400px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(115, 147, 179, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
-export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer}
+const PokemonMovesTitle = styled.h2`
+    width: 80%;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid black;
+`
+
+const PokemonMoves = styled.ul`
+    overflow: scroll;
+    overflow-x: hidden;
+`
+
+const PokemonMove = styled.li`
+    margin: 0 10px;
+    display: inline-block;
+`
+
+export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer, PokemonMovesTitle, PokemonMoves, PokemonMove}

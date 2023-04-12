@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
-import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer } from "./styles"
+import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesAndMovesContainer, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer, PokemonMove, PokemonMoves, PokemonMovesTitle } from "./styles"
 import arrow from "../../assets/images/left-arrow.png"
 
 export const PokemonDetails = () => {
@@ -13,7 +13,7 @@ export const PokemonDetails = () => {
         () => {
             async function fetchPokemon() {
                 const pokemon = await getPokemonDetails(id);
-                
+
                 setPokemon(pokemon);
             }
 
@@ -83,7 +83,16 @@ export const PokemonDetails = () => {
                     </PokemonAbilitiesContainer>
 
                     <PokemonMovesContainer>
-                        
+                        <PokemonMovesTitle>MOVES</PokemonMovesTitle>
+
+                        <PokemonMoves>
+                            {
+                                pokemon.moves && pokemon.moves.map(
+                                    move => 
+                                        <PokemonMove key={move.move.name}>{move.move.name}</PokemonMove>
+                                )
+                            }
+                        </PokemonMoves>
                     </PokemonMovesContainer>
                 </PokemonAbilitiesAndMovesContainer>
             </ PokemonContainer> 
