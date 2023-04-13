@@ -1,5 +1,5 @@
 async function getPokemonsLinks() {
-    const url = "https://pokeapi.co/api/v2/pokemon/?limit=10";
+    const url = "https://pokeapi.co/api/v2/pokemon/?limit=70";
 
     const response = await fetch(url);
 
