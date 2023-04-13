@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
-import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText, PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer, PokemonMove, PokemonMoves, PokemonMovesTitle } from "./styles"
-import arrow from "../../assets/images/left-arrow.png"
+import { BackButtonSection } from "../back-button-section"
+import { PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer, PokemonMove, PokemonMoves, PokemonMovesTitle } from "./styles"
 
 export const PokemonDetails = () => {
     const {id} = useParams();
@@ -25,17 +25,7 @@ export const PokemonDetails = () => {
 
     return (
         <>
-            <BackButtonContainer>
-                <Link to="/">
-                    <BackButton>
-                        <BackButtonImage src={arrow}/>
-                    </BackButton>
-                </Link>
-
-                <BackButtonText>
-                    VOLTAR
-                </BackButtonText>
-            </BackButtonContainer>
+            <BackButtonSection />
 
             <PokemonContainer>
                 <PokemonImageAndNameContainer>
