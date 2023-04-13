@@ -1,5 +1,5 @@
 async function getPokemonsLinks() {
-    const url = "https://pokeapi.co/api/v2/pokemon/?limit=70";
+    const url = "https://pokeapi.co/api/v2/pokemon/?limit=10";
 
     const response = await fetch(url);
 
@@ -15,7 +15,7 @@ async function getPokemonDescription(url) {
 
     const listOfDescriptions = descriptionData.flavor_text_entries;
 
-    const description = listOfDescriptions[6].flavor_text;
+    const description = listOfDescriptions[6].flavor_text; //Scyther e Porigon, por exemplo, apresentam problema nessa descrição (uma é apenas um ponto, a outra não está em inglês)
 
     const filteredDescription = description.replace(/[^a-zA-Z0-9,é,’,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
 
