@@ -12,7 +12,7 @@ export const BackButtonSection = () => {
                 </Link>
 
                 <BackButtonText>
-                    VOLTAR
+                    BACK
                 </BackButtonText>
         </BackButtonContainer>
     )

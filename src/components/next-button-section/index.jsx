@@ -1,19 +1,17 @@
-import { Link } from "react-router-dom"
 import arrow from "../../assets/images/left-arrow.png"
-import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText } from "./styles"
+import { NextButton, NextButtonContainer, NextButtonImage, NextButtonText } from "./styles"
 
-export const BackButtonSection = () => {
+export const NextButtonSection = (props) => {
+
     return (
-        <BackButtonContainer>
-                <Link to="/">
-                    <BackButton>
-                        <BackButtonImage src={arrow}/>
-                    </BackButton>
-                </Link>
+        <NextButtonContainer>
+                <NextButton onClick={props.clickFunction}>
+                    <NextButtonImage src={arrow}/>
+                </NextButton>
 
-                <BackButtonText>
-                    VOLTAR
-                </BackButtonText>
-        </BackButtonContainer>
+                <NextButtonText>
+                    NEXT
+                </NextButtonText>
+        </NextButtonContainer>
     )
 }

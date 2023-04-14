@@ -1,5 +1,5 @@
-async function getPokemonsLinks() {
-    const url = "https://pokeapi.co/api/v2/pokemon/?limit=10";
+async function getPokemonsLinks(notebookPage) {
+    const url = `https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${notebookPage}0`;
 
     const response = await fetch(url);
 
@@ -42,8 +42,8 @@ async function getPokemonInfos(pokemonUrl) {
     return data;
 }
 
-async function getPokemonsList() {
-    const listOfPokemons = await getPokemonsLinks();
+async function getPokemonsList(notebookPage) {
+    const listOfPokemons = await getPokemonsLinks(notebookPage);
 
     await Promise.all(
         listOfPokemons.map (
