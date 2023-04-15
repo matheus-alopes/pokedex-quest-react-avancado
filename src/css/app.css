@@ -1,5 +1,5 @@
 body {
-    background-color: #5c6767;
+    background-color: var(--background-color);
 }
 
 .notebook-container {
@@ -8,7 +8,7 @@ body {
     max-width: 1400px;
     margin: auto;
     padding-left: 180px;
-    background-image: url("../images/notebook-bg.jpg");
+    background-image: url("../assets/images/notebook-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

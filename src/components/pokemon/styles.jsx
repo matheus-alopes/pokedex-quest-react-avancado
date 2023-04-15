@@ -4,12 +4,12 @@ const ListItemContainer = styled.li`
   width: 500px;
   margin: 15px 0;
   padding-left: 15px;
-  background-color: rgb(255, 0, 0, 0.7);
+  background-color: var(--pokemon-list-container-color);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 30px;
   cursor: pointer;
   &:hover {
-    box-shadow: rgba(28, 129, 237, 0.544) 0px 5px 15px;
+    box-shadow: var(--box-shadow) 0px 5px 15px;
     transition: 0.3s ease-in-out;
   }
 `
@@ -29,13 +29,13 @@ const ListItemImage = styled.div`
   margin-top: 15px;
   grid-area: img;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--pokemon-list-image-border-color);
   ${
     props => `background-image: url(${props.image})`
   };
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: var(--pokemon-list-image-container-color);
 `
 
 const ListItemName = styled.p`
@@ -43,7 +43,7 @@ const ListItemName = styled.p`
   padding: 15px 0 0 15px;
   font-weight: bold;
   font-size: 32px;
-  color: rgb(255, 255, 255);
+  color: var(--pokemon-list-name-font-color);
   text-transform: uppercase;
 `
 
@@ -53,9 +53,9 @@ const ListItemDescription = styled.p`
   padding: 15px;
   line-height: 22px;
   text-align: justify;
-  border: 5px inset rgba(0, 0, 0, 0.2);
+  border: 5px inset var(--pokemon-list-description-border-color);
   border-bottom-right-radius: 30px;
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: var(--pokemon-list-description-container-color);
 `
 
 export {LisItemLink, ListItemContainer, ListItemDescription, ListItemImage, ListItemName}

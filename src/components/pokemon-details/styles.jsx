@@ -1,67 +1,8 @@
 import styled, {keyframes} from "styled-components"
 import pokemonDetailsBackground from "../../assets/images/pokemon-details-background.jpg"
 
-const BackButtonContainer = styled.div`
-    position: absolute;
-    left: 50px;
-    height: 100%;
-    min-height: 100vh;
-    width: 120px;
-    background-color: rgb(240,248,255, 0.7);
-    font-size: 26px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
-
-const BackButton = styled.button`
-    margin-bottom: 30px;
-    width: 80px;
-    height: 80px;
-    border: 1px solid rgb(240,248,255, 0.7);
-    border-radius: 50%;
-    box-shadow: rgba(28, 129, 237, 0.544) 0px 5px 15px;
-    background-color: rgb(240,248,255, 0.7);
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-    &:hover {
-        background-color: rgb(137, 207, 240, 0.8);
-    }
-    position: relative;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-`
-
-const ArrowAnimation = keyframes`
-    0% {
-        transform: translateX(2px);
-    }
-    50% {
-        transform: translateX(-8px);
-    }
-
-    100% {
-        transform: translateX(2px);
-    }
-`
-
-const BackButtonImage = styled.img`
-    width: 26px;
-    position: absolute;
-    animation: ${ArrowAnimation} 1s ease-in-out infinite;
-`
-
-const BackButtonText = styled.p`
-    // color: rgb(0, 150, 255);
-`
-
 const PokemonContainer = styled.div`
     margin: 40px 30px 0 30px;
-    // display: flex;
-    // flex-direction: column;
     display: grid;
     grid-template-areas: "base-infos abilities"
                          "moves moves";
@@ -117,7 +58,7 @@ const PokemonAbilitiesContainer = styled.div`
     padding: 20px 0;
     border: 1px solid black;
     border-radius: 15px;
-    background-color: rgb(115, 147, 179, 0.2);
+    background-color: var(--details-container-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,7 +85,7 @@ const PokemonAbilityContainer = styled.li`
     max-height: 260px;
     border: 1px solid black;
     border-radius: 15px;
-    background-color: rgb(255, 255, 255, 0.7);
+    background-color: var(--pokemon-ability-container-color);
 `
 
 const PokemonAbilityName = styled.p`
@@ -155,7 +96,7 @@ const PokemonAbilityName = styled.p`
     font-size: 16px;
     border-bottom: 2px dashed black;
     border-radius: 15px 15px 0 0;
-    background-color: rgb(255, 0, 0, 0.7);
+    background-color: var(--pokemon-ability-name-container-color);
 `
 
 const PokemonAbilityDescription = styled.p`
@@ -169,7 +110,7 @@ const PokemonMovesContainer = styled.div`
     max-height: 400px;
     border: 1px solid black;
     border-radius: 15px;
-    background-color: rgb(115, 147, 179, 0.2);
+    background-color: var(--details-container-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,4 +136,4 @@ const PokemonMove = styled.li`
     border: 1px solid black;
 `
 
-export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText, PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer, PokemonMovesTitle, PokemonMoves, PokemonMove}
+export {PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer, PokemonMovesTitle, PokemonMoves, PokemonMove}

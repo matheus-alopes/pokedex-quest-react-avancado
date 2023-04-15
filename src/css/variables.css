@@ -1,0 +1,14 @@
+:root {
+   --background-color: #586565;
+   --details-container-color: #7393b333;
+   --pokemon-ability-container-color: #ffffffb3;
+   --pokemon-ability-name-container-color: #ff0000b3;
+   --pokemon-list-container-color: #ff0000b3;
+   --pokemon-list-image-container-color: #ffffffb3;
+   --pokemon-list-image-border-color: #00000099;
+   --pokemon-list-name-font-color: #ffffff;
+   --pokemon-list-description-container-color: #ffffffb3;
+   --pokemon-list-description-border-color: #00000033;
+   --box-shadow: #1c81ed8b;
+
+}
