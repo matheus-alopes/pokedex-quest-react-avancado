@@ -29,7 +29,7 @@ const ListItemImage = styled.div`
   margin-top: 15px;
   grid-area: img;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   ${
     props => `background-image: url(${props.image})`
   };
