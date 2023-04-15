@@ -25,7 +25,7 @@ export const PokemonDetails = () => {
 
     return (
         <>
-            <BackButtonSection />
+            <BackButtonSection height={"big"} />
 
             <PokemonContainer>
                 <PokemonImageAndNameContainer>

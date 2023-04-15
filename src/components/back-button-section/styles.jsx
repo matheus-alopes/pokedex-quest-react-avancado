@@ -1,10 +1,18 @@
-import styled, {keyframes} from "styled-components"
+import styled, {css, keyframes} from "styled-components"
 
 const BackButtonContainer = styled.div`
     position: absolute;
     left: 50px;
-    height: 100%;
-    min-height: 100vh;
+    ${
+        props => props.height == "small" && css `
+            height: 170px;
+        `
+    }
+    ${
+        props => props.height == "big" && css `
+            height: 100%;
+        `
+    }
     width: 120px;
     background-color: rgb(240,248,255, 0.7);
     font-size: 26px;
@@ -16,7 +24,24 @@ const BackButtonContainer = styled.div`
 `
 
 const BackButton = styled.button`
-    margin-bottom: 30px;
+    ${
+        props => props.disabled == true && css `
+        margin-bottom: 30px;
+        `
+    }
+
+    ${
+        props => props.height == "small" && css `
+        margin-bottom: 10px;
+        `
+    }
+
+    ${
+        props => props.height == "big" && css `
+        margin-bottom: 30px;
+        `
+    }
+
     width: 80px;
     height: 80px;
     border: 1px solid rgb(240,248,255, 0.7);

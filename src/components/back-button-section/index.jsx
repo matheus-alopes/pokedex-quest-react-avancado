@@ -2,11 +2,11 @@ import { Link } from "react-router-dom"
 import arrow from "../../assets/images/left-arrow.png"
 import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText } from "./styles"
 
-export const BackButtonSection = () => {
+export const BackButtonSection = (props) => {
     return (
-        <BackButtonContainer>
+        <BackButtonContainer height={props.height}>
                 <Link to="/">
-                    <BackButton>
+                    <BackButton onClick={props.clickFunction} height={props.height} disabled={props.disabled}>
                         <BackButtonImage src={arrow}/>
                     </BackButton>
                 </Link>

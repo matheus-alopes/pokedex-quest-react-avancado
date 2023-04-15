@@ -3,6 +3,7 @@ import {getPokemonsList} from "../../services/getPokemonsList"
 import { useEffect, useState } from "react";
 import { PokemonList } from "./styles";
 import { NextButtonSection } from "../next-button-section";
+import { BackButtonSection } from "../back-button-section"
 
 export const Pokemons = () => {
     const [notebookPageCounter, setNotebookPageCounter] = useState(0)
@@ -25,6 +26,12 @@ export const Pokemons = () => {
         [notebookPageCounter]
     )
 
+    function handleBack() {
+        setNotebookPageCounter (
+            (count) => count - 1
+        )
+    }
+
     function handleNext() {
         setNotebookPageCounter (
             (count) => count + 1
@@ -34,6 +41,8 @@ export const Pokemons = () => {
 
     return (    
         <>
+            <BackButtonSection clickFunction = { ()=> handleBack() } height={"small"} disabled={notebookPageCounter === 0} />
+
             <PokemonList>
                 {   
                     pokemonsList.map (
@@ -42,7 +51,7 @@ export const Pokemons = () => {
                 }
             </ PokemonList>
 
-            <NextButtonSection clickFunction={()=>handleNext()} />
+            <NextButtonSection clickFunction = { ()=> handleNext() } />
         </>
     )
 }
