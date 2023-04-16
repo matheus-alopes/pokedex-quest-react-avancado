@@ -3,7 +3,7 @@ import styled, {keyframes} from "styled-components"
 const NextButtonContainer = styled.div`
     position: absolute;
     right: 0;
-    height: 170px;
+    height: 164px;
     width: 120px;
     background-color: rgb(240,248,255, 0.7);
     font-size: 26px;

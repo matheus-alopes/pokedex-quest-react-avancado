@@ -12,3 +12,31 @@
    --box-shadow: #1c81ed8b;
 
 }
+
+body.light  {
+   --background-color: #586565;
+   --details-container-color: #7393b333;
+   --pokemon-ability-container-color: #ffffffb3;
+   --pokemon-ability-name-container-color: #ff0000b3;
+   --pokemon-list-container-color: #ff0000b3;
+   --pokemon-list-image-container-color: #ffffffb3;
+   --pokemon-list-image-border-color: rgba(0, 0, 0, 0.6);
+   --pokemon-list-name-font-color: #ffffff;
+   --pokemon-list-description-container-color: #ffffffb3;
+   --pokemon-list-description-border-color: #00000033;
+   --box-shadow: #1c81ed8b;
+}
+
+body.dark {
+   --background-color: rgba(22, 22, 8, 0.953);
+   --pokemon-list-container-color: #550000b3;
+   --pokemon-list-image-container-color: #423d38b3;
+   --pokemon-list-image-border-color: rgba(236, 236, 164, 0.6);
+   --pokemon-list-name-font-color: rgba(236, 236, 164, 0.953);
+   --pokemon-list-description-container-color: #423d38b3;
+   --pokemon-list-description-border-color: rgba(236, 236, 164, 0.2);
+   --box-shadow: #1c81ed8b;
+   --details-container-color: #7393b333;
+   --pokemon-ability-container-color: #ffffffb3;
+   --pokemon-ability-name-container-color: #ff0000b3;
+}

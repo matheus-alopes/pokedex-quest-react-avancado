@@ -2,12 +2,13 @@ import styled, {css, keyframes} from "styled-components"
 
 const BackButtonContainer = styled.div`
     position: absolute;
-    left: 50px;
+    left: 0;
     ${
         props => props.height == "small" && css `
-            height: 170px;
+            height: 164px;
         `
     }
+
     ${
         props => props.height == "big" && css `
             height: 100%;

@@ -7,10 +7,11 @@ body {
     width: 95vw;
     max-width: 1400px;
     margin: auto;
-    padding-left: 180px;
-    background-image: url("../assets/images/notebook-bg.jpg");
+    padding-left: 190px;
+    background-image: url("../assets/images/notebook-black-page-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     position: relative;
