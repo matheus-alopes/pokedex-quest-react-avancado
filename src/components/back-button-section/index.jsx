@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import arrow from "../../assets/images/left-arrow.png"
+import arrow from "../../assets/images/left-arrow-white.png"
 import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText } from "./styles"
 
 export const BackButtonSection = (props) => {

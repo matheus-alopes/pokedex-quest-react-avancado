@@ -56,6 +56,7 @@ const ListItemDescription = styled.p`
   border: 5px inset var(--pokemon-list-description-border-color);
   border-bottom-right-radius: 30px;
   background-color: var(--pokemon-list-description-container-color);
+  color: var(--pokemon-list-description-font-color)
 `
 
 export {LisItemLink, ListItemContainer, ListItemDescription, ListItemImage, ListItemName}

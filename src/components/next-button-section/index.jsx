@@ -1,4 +1,4 @@
-import arrow from "../../assets/images/left-arrow.png"
+import arrow from "../../assets/images/left-arrow-white.png"
 import { NextButton, NextButtonContainer, NextButtonImage, NextButtonText } from "./styles"
 
 export const NextButtonSection = (props) => {
