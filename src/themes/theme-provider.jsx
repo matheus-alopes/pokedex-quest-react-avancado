@@ -4,7 +4,7 @@ import { themes } from "./themes";
 
 const ThemeContext = createContext({})
 
-export const themeProvider = (props) => {
+export const ThemeProvider = (props) => {
     return (
         <ThemeContext.Provider value={{themes}}>
             {props.children}
