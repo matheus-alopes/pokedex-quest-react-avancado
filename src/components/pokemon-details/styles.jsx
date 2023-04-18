@@ -22,7 +22,7 @@ const PokemonImageContainer = styled.div`
     max-width: 500px;
     max-height: 250px;
     border-radius: 5px;
-    background-image: url(${pokemonDetailsBackground});
+    background-image: var(--pokemon-details-background-image);
     background-size: cover;
     background-position:bottom;
     display: flex;

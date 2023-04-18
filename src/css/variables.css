@@ -1,4 +1,20 @@
+:root {
+   --background-light-theme-image: url("../assets/images/notebook-white-page-background.jpg");
+   --background-dark-theme-image: url("../assets/images/notebook-black-page-background.jpg");
+
+   --pokemon-details-light-background-image: url("../assets/images/pokemon-details-light-background.jpg");
+   --pokemon-details-dark-background-image: url("../assets/images/pokemon-details-dark-background.jpg");
+
+   --back-button-light-image: url("../assets/images/left-arrow-black.png");
+   --back-button-dark-image: url("../assets/images/left-arrow-white.png"); 
+}
+
 body.light  {
+   --notebook-background-image: var(--background-light-theme-image);
+   --pokemon-details-background-image: var(--pokemon-details-light-background-image);
+   --button-image: var(--back-button-light-image);
+
+
    --background-color: #586565;
    
    --header-title-font-color: #000000;
@@ -29,6 +45,10 @@ body.light  {
 }
 
 body.dark {
+   --notebook-background-image: var(--background-dark-theme-image);
+   --pokemon-details-background-image: var(--pokemon-details-dark-background-image);
+   --button-image: var(--back-button-dark-image);
+   
    --background-color: #161608f3;
 
    --header-title-font-color: #fffff0f3;
