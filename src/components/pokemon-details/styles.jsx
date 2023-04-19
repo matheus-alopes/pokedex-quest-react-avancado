@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import pokemonDetailsBackground from "../../assets/images/pokemon-details-dark-background.jpg"
 
 const PokemonContainer = styled.div`
     margin: 40px 30px 0 30px;
