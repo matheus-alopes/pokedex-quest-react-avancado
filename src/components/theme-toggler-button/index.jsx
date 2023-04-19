@@ -1,4 +1,4 @@
-import { ThemeTogglerButtonContainer, ThemeTogglerContainer, ThemeTogglerTitle } from "./styles"
+import { ThemeTogglerButtonContainer, ThemeTogglerContainer, ThemeTogglerTitle, TogglerButton, ThemesContainer, LightTheme, DarkTheme, Toggler } from "./styles"
 
 export const ThemeTogglerButton = () => {
     return (
@@ -8,8 +8,15 @@ export const ThemeTogglerButton = () => {
             </ThemeTogglerTitle>
 
             <ThemeTogglerButtonContainer>
-                <ThemeTogglerButton />
+                <TogglerButton>
+                    <Toggler />
+                </TogglerButton>
 
+                <ThemesContainer>
+                    <LightTheme>Light</LightTheme>
+
+                    <DarkTheme>Dark</DarkTheme>
+                </ThemesContainer>
             </ThemeTogglerButtonContainer>
         </ThemeTogglerContainer>
     )
