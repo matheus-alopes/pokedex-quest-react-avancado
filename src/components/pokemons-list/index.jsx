@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { PokemonList } from "./styles";
 import { NextButtonSection } from "../next-button-section";
 import { BackButtonSection } from "../back-button-section"
+import { ThemeTogglerButton } from "../theme-toggler-button";
 
 export const Pokemons = () => {
     const [notebookPageCounter, setNotebookPageCounter] = useState(0)
@@ -46,6 +47,8 @@ export const Pokemons = () => {
                 height={"small"}
                 disabled={notebookPageCounter === 0}
             />
+
+            <ThemeTogglerButton />
 
             <PokemonList>
                 {   

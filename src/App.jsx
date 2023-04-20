@@ -13,8 +13,6 @@ function App() {
             <h1 className="notebook-title">Pokémon Diary</h1>
           </header>
 
-          <ThemeTogglerButton />
-
           <AppRoutes />
         </div>
       </ThemeProvider>

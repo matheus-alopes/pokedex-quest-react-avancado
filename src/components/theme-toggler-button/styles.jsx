@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, {keyframes} from "styled-components"
 
 const ThemeTogglerContainer = styled.div`
     position: absolute;
@@ -43,6 +43,7 @@ const Toggler = styled.div`
     height: 25px;
     border-radius: 50%;
     background-color: var(--button-font-color);
+    position: absolute;
 `
 
 const ThemesContainer = styled.div`

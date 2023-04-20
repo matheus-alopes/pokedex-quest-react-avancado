@@ -1,6 +1,9 @@
 import { ThemeTogglerButtonContainer, ThemeTogglerContainer, ThemeTogglerTitle, TogglerButton, ThemesContainer, LightTheme, DarkTheme, Toggler } from "./styles"
 
 export const ThemeTogglerButton = () => {
+    const actualTheme = document.getElementsByTagName("body")[0].classList;
+    const toggler = document.getElementById("toggler");
+
     return (
         <ThemeTogglerContainer>
             <ThemeTogglerTitle>
@@ -8,16 +11,28 @@ export const ThemeTogglerButton = () => {
             </ThemeTogglerTitle>
 
             <ThemeTogglerButtonContainer>
-                <TogglerButton onClick={()=> {
-                    if(document.getElementsByTagName("body")[0].classList == "light") {
-                        document.getElementsByTagName("body")[0].classList.remove("light");
-                        document.getElementsByTagName("body")[0].classList.add("dark");
-                    } else {
-                        document.getElementsByTagName("body")[0].classList.remove("dark"); 
-                        document.getElementsByTagName("body")[0].classList.add("light");
+                <TogglerButton 
+                    onClick = {
+                        ()=> {
+                            if (actualTheme == "light") {
+                                actualTheme.remove("light");
+                                actualTheme.add("dark");
+                                
+                                toggler.classList.remove("up-animation");
+                                toggler.classList.add("down-animation");
+                            } 
+                            
+                            else if (actualTheme == "dark") {
+                                actualTheme.remove("dark"); 
+                                actualTheme.add("light");
+
+                                toggler.classList.remove("down-animation");
+                                toggler.classList.add("up-animation");
+                            }
+                        }
                     }
-                }}>
-                    <Toggler />
+                >
+                    <Toggler id="toggler" />
                 </TogglerButton>
 
                 <ThemesContainer>
