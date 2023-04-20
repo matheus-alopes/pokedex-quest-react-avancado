@@ -8,7 +8,15 @@ export const ThemeTogglerButton = () => {
             </ThemeTogglerTitle>
 
             <ThemeTogglerButtonContainer>
-                <TogglerButton>
+                <TogglerButton onClick={()=> {
+                    if(document.getElementsByTagName("body")[0].classList == "light") {
+                        document.getElementsByTagName("body")[0].classList.remove("light");
+                        document.getElementsByTagName("body")[0].classList.add("dark");
+                    } else {
+                        document.getElementsByTagName("body")[0].classList.remove("dark"); 
+                        document.getElementsByTagName("body")[0].classList.add("light");
+                    }
+                }}>
                     <Toggler />
                 </TogglerButton>
 

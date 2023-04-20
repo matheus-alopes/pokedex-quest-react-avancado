@@ -2,12 +2,12 @@ import styled from "styled-components"
 
 const ThemeTogglerContainer = styled.div`
     position: absolute;
-    left: 6px;
+    left: 0;
     top: 200px;
     width: 170px;
     height: 150px;
     background-color: var(--button-background-color);
-    border-radius: 8px;
+    border-radius: 0 8px 8px 0;
     color: var(--button-font-color);
     display: flex;
     flex-direction: column;
