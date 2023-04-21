@@ -1,5 +1,11 @@
 export const themes = {
     light:  {
+        images: {
+         notebookBackgroundImage: "../assets/images/notebook-white-page-background.jpg",
+         detailsBackgroundImage: "../assets/images/pokemon-details-light-background.jpg",
+         buttonImage: "../assets/images/left-arrow-black.png"
+        },
+      
         backgroundColor: "#586565",
         
         headerTitleFontColor: "#000000",

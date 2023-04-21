@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components"
+import styled from "styled-components"
 
 const ThemeTogglerContainer = styled.div`
     position: absolute;
@@ -16,7 +16,7 @@ const ThemeTogglerContainer = styled.div`
 `
 
 const ThemeTogglerTitle = styled.h2`
-    font-weight: bold;
+    font-weight: 500;
 `
 
 const ThemeTogglerButtonContainer = styled.div`
