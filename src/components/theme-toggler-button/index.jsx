@@ -1,7 +1,7 @@
 import { ThemeTogglerButtonContainer, ThemeTogglerContainer, ThemeTogglerTitle, TogglerButton, ThemesContainer, LightTheme, DarkTheme, Toggler } from "./styles"
 
 export const ThemeTogglerButton = () => {
-    const actualTheme = document.getElementsByTagName("body")[0].classList;
+    const actualTheme = document.getElementById("notebook-container").classList;
     const toggler = document.getElementById("toggler");
 
     return (
@@ -20,6 +20,8 @@ export const ThemeTogglerButton = () => {
                                 
                                 toggler.classList.remove("up-animation");
                                 toggler.classList.add("down-animation");
+
+                                localStorage.setItem("theme", "dark");
                             } 
                             
                             else if (actualTheme == "dark") {
@@ -28,6 +30,8 @@ export const ThemeTogglerButton = () => {
 
                                 toggler.classList.remove("down-animation");
                                 toggler.classList.add("up-animation");
+
+                                localStorage.setItem("theme", "light");
                             }
                         }
                     }

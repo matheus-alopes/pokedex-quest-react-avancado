@@ -9,11 +9,10 @@
    --back-button-dark-image: url("../assets/images/left-arrow-white.png"); 
 }
 
-body.light  {
+#notebook-container.light  {
    --notebook-background-image: var(--background-light-theme-image);
    --pokemon-details-background-image: var(--pokemon-details-light-background-image);
    --button-image: var(--back-button-light-image);
-
 
    --background-color: #586565;
    
@@ -44,7 +43,7 @@ body.light  {
    --pokemon-title-border-color: #000000;
 }
 
-body.dark {
+#notebook-container.dark {
    --notebook-background-image: var(--background-dark-theme-image);
    --pokemon-details-background-image: var(--pokemon-details-dark-background-image);
    --button-image: var(--back-button-dark-image);

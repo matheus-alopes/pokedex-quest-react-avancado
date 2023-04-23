@@ -26,7 +26,7 @@ const ThemeTogglerButtonContainer = styled.div`
 `
 
 const TogglerButton = styled.div`
-    padding: 8px 0;
+    padding: 4px 0;
     width: 45px;
     height: 90px;
     border-radius: 30px;
@@ -35,6 +35,7 @@ const TogglerButton = styled.div`
     cursor: pointer;
     background-color: var(--background-color);
     opacity: 0.8;
+    border: 5px inset var(--button-border-color);
     box-shadow: box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 

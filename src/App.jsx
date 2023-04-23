@@ -1,12 +1,11 @@
 import pokeball from "./assets/images/pokeball.png"
-import { ThemeTogglerButton } from "./components/theme-toggler-button"
 import { AppRoutes } from "./pages/routes"
 import { ThemeProvider } from "./themes/theme-provider"
 
 function App() {
   return (
       <ThemeProvider>
-        <div className="notebook-container">
+        <div id="notebook-container" className={localStorage.theme}>
           <header>
             <img src={pokeball} alt="pokeball" className="pokeball" />
             

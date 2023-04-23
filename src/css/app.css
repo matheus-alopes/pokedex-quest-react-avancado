@@ -1,8 +1,8 @@
 body {
-    background-color: var(--background-color);
+    background-color: var(--header-title-font-color);
 }
 
-.notebook-container {
+#notebook-container {
     min-height: 100vh;
     width: 95vw;
     max-width: 1400px;
@@ -17,19 +17,19 @@ body {
     position: relative;
 }
 
-.notebook-container header {
+#notebook-container header {
     padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.notebook-container header h1 {
+#notebook-container header h1 {
     font-size: 40px;
     color: var(--header-title-font-color);
 }
 
-.notebook-container header .pokeball {
+#notebook-container header .pokeball {
     width: 50px;
     height: 50px;
     margin-right: 20px;
