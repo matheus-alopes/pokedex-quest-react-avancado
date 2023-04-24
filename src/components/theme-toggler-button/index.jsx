@@ -1,8 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../themes/theme-provider";
 import { ThemeTogglerButtonContainer, ThemeTogglerContainer, ThemeTogglerTitle, TogglerButton, ThemesContainer, LightTheme, DarkTheme, Toggler } from "./styles"
 
 export const ThemeTogglerButton = () => {
-    const actualTheme = document.getElementById("notebook-container").classList;
     const toggler = document.getElementById("toggler");
+    const {theme, toggleTheme} = useContext(ThemeContext);
 
     return (
         <ThemeTogglerContainer>
@@ -14,24 +16,18 @@ export const ThemeTogglerButton = () => {
                 <TogglerButton 
                     onClick = {
                         ()=> {
-                            if (actualTheme == "light") {
-                                actualTheme.remove("light");
-                                actualTheme.add("dark");
-                                
+                            if (theme == "light") {
+                                toggleTheme();
+
                                 toggler.classList.remove("up-animation");
                                 toggler.classList.add("down-animation");
-
-                                localStorage.setItem("theme", "dark");
                             } 
                             
-                            else if (actualTheme == "dark") {
-                                actualTheme.remove("dark"); 
-                                actualTheme.add("light");
+                            else if (theme == "dark") {
+                                toggleTheme();
 
                                 toggler.classList.remove("down-animation");
                                 toggler.classList.add("up-animation");
-
-                                localStorage.setItem("theme", "light");
                             }
                         }
                     }
