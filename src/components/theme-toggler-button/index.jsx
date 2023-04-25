@@ -3,6 +3,7 @@ import { ThemeContext } from "../../themes/theme-provider";
 import { ThemeTogglerButtonContainer, ThemeTogglerContainer, ThemeTogglerTitle, TogglerButton, ThemesContainer, LightTheme, DarkTheme, Toggler } from "./styles"
 
 export const ThemeTogglerButton = () => {
+    const body = document.getElementsByTagName("body")[0];
     const toggler = document.getElementById("toggler");
     const {theme, toggleTheme} = useContext(ThemeContext);
 
@@ -19,12 +20,16 @@ export const ThemeTogglerButton = () => {
                             if (theme == "light") {
                                 toggleTheme();
 
+                                body.style.backgroundColor = "var(--background-dark-color)"
+
                                 toggler.classList.remove("up-animation");
                                 toggler.classList.add("down-animation");
                             } 
                             
                             else if (theme == "dark") {
                                 toggleTheme();
+
+                                body.style.backgroundColor = "var(--background-light-color)"
 
                                 toggler.classList.remove("down-animation");
                                 toggler.classList.add("up-animation");

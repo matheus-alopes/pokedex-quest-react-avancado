@@ -36,7 +36,6 @@ const TogglerButton = styled.div`
     background-color: var(--background-color);
     opacity: 0.8;
     border: 5px inset var(--button-border-color);
-    box-shadow: box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `
 
 const Toggler = styled.div`
@@ -44,6 +43,7 @@ const Toggler = styled.div`
     height: 25px;
     border-radius: 50%;
     background-color: var(--button-font-color);
+    box-shadow: box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
     position: absolute;
 `
 

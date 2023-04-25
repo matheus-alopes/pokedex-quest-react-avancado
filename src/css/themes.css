@@ -6,16 +6,19 @@
    --pokemon-details-dark-background-image: url("../assets/images/pokemon-details-dark-background.jpg");
 
    --back-button-light-image: url("../assets/images/left-arrow-black.png");
-   --back-button-dark-image: url("../assets/images/left-arrow-white.png"); 
+   --back-button-dark-image: url("../assets/images/left-arrow-white.png");
+   
+   --background-light-color: #586565;
+   --background-dark-color: #161608f3;
 }
 
 #notebook-container.light  {
    --notebook-background-image: var(--background-light-theme-image);
    --pokemon-details-background-image: var(--pokemon-details-light-background-image);
    --button-image: var(--back-button-light-image);
-
-   --background-color: #586565;
    
+   --background-color: #586565;
+
    --header-title-font-color: #000000;
 
    --pokemon-list-container-color: #ff0000b3;
@@ -47,7 +50,7 @@
    --notebook-background-image: var(--background-dark-theme-image);
    --pokemon-details-background-image: var(--pokemon-details-dark-background-image);
    --button-image: var(--back-button-dark-image);
-   
+
    --background-color: #161608f3;
 
    --header-title-font-color: #fffff0f3;
