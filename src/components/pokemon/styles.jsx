@@ -14,7 +14,7 @@ const ListItemContainer = styled.li`
   }
 `
 
-const LisItemLink = styled.a`
+const LisItemLink = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
