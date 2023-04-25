@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
 import { BackButtonSection } from "../back-button-section"
 import { PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer, PokemonMove, PokemonMoves, PokemonMovesTitle } from "./styles"
+import { ThemeContext } from "../../themes/theme-provider"
 
 export const PokemonDetails = () => {
     const {id} = useParams();
 
     const [pokemon, setPokemon] = useState({})
     
+    const {theme} = useContext(ThemeContext)
+
     useEffect(
         () => {
             async function fetchPokemon() {
@@ -24,7 +27,7 @@ export const PokemonDetails = () => {
     )
 
     return (
-        <>
+        <div id="notebook-container" className={theme}>
             <BackButtonSection height={"big"} />
 
             <PokemonContainer>
@@ -82,6 +85,6 @@ export const PokemonDetails = () => {
                     </PokemonMoves>
                 </PokemonMovesContainer>
             </ PokemonContainer> 
-        </>
+        </ div>
     )
 }
