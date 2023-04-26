@@ -26,7 +26,7 @@ const ThemeTogglerButtonContainer = styled.div`
 `
 
 const TogglerButton = styled.div`
-    padding: 4px 0;
+    padding: 4px;
     width: 45px;
     height: 90px;
     border-radius: 30px;
