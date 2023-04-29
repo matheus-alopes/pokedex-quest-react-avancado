@@ -7,7 +7,9 @@ import { BackButtonSection } from "../back-button-section"
 import { ThemeTogglerButton } from "../theme-toggler-button";
 
 export const Pokemons = () => {
-    const [notebookPageCounter, setNotebookPageCounter] = useState(0)
+    let pageCounter = Number(localStorage.pageCounter);
+
+    const [notebookPageCounter, setNotebookPageCounter] = useState(pageCounter ? pageCounter : 0)
     
     const [pokemonsList, setPokemonsList] = useState([])
 
@@ -24,19 +26,21 @@ export const Pokemons = () => {
            fetchPokemons();
         }
         ,
-        [notebookPageCounter]
+        [notebookPageCounter, localStorage.pageCounter]
     )
 
     function handleBack() {
         setNotebookPageCounter (
             (count) => count - 1
         )
+        console.log(notebookPageCounter)
     }
 
     function handleNext() {
         setNotebookPageCounter (
             (count) => count + 1
         )
+        console.log(notebookPageCounter)
     }
 
 
