@@ -15,7 +15,13 @@ async function getPokemonDescription(url) {
 
     const listOfDescriptions = descriptionData.flavor_text_entries;
 
-    const description = listOfDescriptions[6].flavor_text; //Scyther e Porigon, por exemplo, apresentam problema nessa descrição (uma é apenas um ponto, a outra não está em inglês)
+    console.log(listOfDescriptions);
+
+    let description = listOfDescriptions[6].flavor_text; //Scyther e Porigon, por exemplo, apresentam problema nessa descrição (uma é apenas um ponto, a outra não está em inglês)
+
+    if(listOfDescriptions[6].language.name != "en") {
+        description = listOfDescriptions[7].flavor_text;
+    }
 
     const filteredDescription = description.replace(/[^a-zA-Z0-9,é,’,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
 

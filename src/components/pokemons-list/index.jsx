@@ -7,7 +7,7 @@ import { BackButtonSection } from "../back-button-section"
 import { ThemeTogglerButton } from "../theme-toggler-button";
 
 export const Pokemons = () => {
-    let pageCounter = Number(localStorage.pageCounter);
+    const pageCounter = Number(localStorage.pageCounter); //O localStorage armazena no formato "string"
 
     const [notebookPageCounter, setNotebookPageCounter] = useState(pageCounter ? pageCounter : 0)
     
@@ -26,21 +26,19 @@ export const Pokemons = () => {
            fetchPokemons();
         }
         ,
-        [notebookPageCounter, localStorage.pageCounter]
+        [notebookPageCounter]
     )
 
     function handleBack() {
         setNotebookPageCounter (
             (count) => count - 1
         )
-        console.log(notebookPageCounter)
     }
 
     function handleNext() {
         setNotebookPageCounter (
             (count) => count + 1
         )
-        console.log(notebookPageCounter)
     }
 
 
