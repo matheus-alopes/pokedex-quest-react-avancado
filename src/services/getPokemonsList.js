@@ -17,11 +17,31 @@ async function getPokemonDescription(url) {
 
     console.log(listOfDescriptions);
 
-    let description = listOfDescriptions[6].flavor_text; //Scyther e Porigon, por exemplo, apresentam problema nessa descrição (uma é apenas um ponto, a outra não está em inglês)
+    // let description = listOfDescriptions[6].flavor_text; //Scyther e Porigon, por exemplo, apresentam problema nessa descrição (uma é apenas um ponto, a outra não está em inglês)
 
-    if(listOfDescriptions[6].language.name != "en") {
-        description = listOfDescriptions[7].flavor_text;
-    }
+    // if(listOfDescriptions[6].language.name != "en") {
+    //     description = listOfDescriptions[7].flavor_text;
+
+    //     if (listOfDescriptions[7].language.name != "en") {
+    //         if (listOfDescriptions[5].language.name == "en") {
+    //             description = listOfDescriptions[5].flavor_text;
+    //         } if (listOfDescriptions[5].language.name != "en"){
+    //             description = listOfDescriptions[37].flavor_text;
+    //         } if (listOfDescriptions[37].language.name != "en"){
+    //             description = listOfDescriptions[8].flavor_text;
+    //         } if (listOfDescriptions[8].language.name != "en"){
+    //             description = "meu cu";
+    //         }
+    //     }
+    // }
+
+    for(let i = 0; i <= listOfDescriptions.length; i++) {
+                if(listOfDescriptions[i].language.name == "en") {
+                    let description = listOfDescriptions[i].flavor_text;
+
+                    return description
+                }
+            }
 
     const filteredDescription = description.replace(/[^a-zA-Z0-9,é,’,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
 
@@ -61,6 +81,8 @@ async function getPokemonsList(notebookPage) {
                 pokemon.image = pokemonData.image;
 
                 pokemon.description = pokemonData.description;
+
+                // console.log(pokemon)
             }
         )
     )

@@ -20,7 +20,7 @@ const LisItemLink = styled.div`
   display: grid;
   grid-template-areas: "img name"
                       "img description";
-  grid-template-rows: 50px;
+  // grid-template-rows: 50px;
 `
 
 const ListItemImage = styled.div`
