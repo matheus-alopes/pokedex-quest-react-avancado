@@ -81,7 +81,7 @@ const PokemonAbilities = styled.ul`
 
 const PokemonAbilityContainer = styled.li`
     margin: 10px;
-    max-width: 170px;
+    max-width: 200px;
     height: 150px;
     max-height: 260px;
     border: 1px solid black;

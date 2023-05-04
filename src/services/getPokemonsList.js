@@ -15,7 +15,7 @@ async function getPokemonDescription(url) {
 
     const listOfDescriptions = descriptionData.flavor_text_entries;
 
-    console.log(listOfDescriptions);
+    // console.log(listOfDescriptions);
 
     for(let i = 0; i <= listOfDescriptions.length; i++) {
                 if(listOfDescriptions[i].language.name == "en") {

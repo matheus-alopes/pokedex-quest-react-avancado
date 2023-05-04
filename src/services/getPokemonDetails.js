@@ -26,11 +26,15 @@ async function getPokemonDetails(pokemonId) {
             async ability => {
                 const url = ability.ability.url;
 
-                const data = await getAbilityDetails(url)
+                const data = await getAbilityDetails(url);
 
-                const abilityDescription = data.flavor_text_entries[0].flavor_text; //Não esquecer de lidar com os que, por ventura, não estiverem em inglês (especialmente a terceira habilidade, tem vindo em outro idioma)
+                const abilityDescriptions = data.flavor_text_entries;
 
-                ability.description = abilityDescription;   
+                for(let i = 0; i <= abilityDescriptions.length; i++) {
+                    if(abilityDescriptions[i].language.name == "en") {
+                        return ability.description = abilityDescriptions[i].flavor_text
+                    }
+                }
             }
         )
     )
