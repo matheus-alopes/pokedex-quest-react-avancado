@@ -45,7 +45,7 @@ export const Pokemons = () => {
     return (    
         <>
             <BackButtonSection
-                clickFunction = { ()=> handleBack() }
+                clickFunction = { () => handleBack() }
                 height={"small"}
                 disabled={notebookPageCounter === 0}
             />

@@ -10,6 +10,28 @@ html {
     box-sizing: inherit;
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #393947 #e5e1e1;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #e5e1e1;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #393947;
+    border-radius: 10px;
+    border: 1.5px groove #ffffff;
+  }
+
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;

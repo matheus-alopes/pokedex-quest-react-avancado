@@ -81,7 +81,7 @@ const PokemonAbilities = styled.ul`
 
 const PokemonAbilityContainer = styled.li`
     margin: 10px;
-    max-width: 200px;
+    max-width: 210px;
     height: 150px;
     max-height: 260px;
     border: 1px solid black;
@@ -100,8 +100,18 @@ const PokemonAbilityName = styled.p`
     background-color: var(--pokemon-ability-name-container-color);
 `
 
-const PokemonAbilityDescription = styled.p`
+const PokemonAbilityDescription = styled.div`
+    max-height: 100px;
     padding: 0 10px;
+    text-align: justify;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 8px;
+        border: 1px solid black;
+    };
+    &::-webkit-scrollbar-track {
+        background: var(--pokemon-ability-container-color)
+    }
 `
 
 const PokemonMovesContainer = styled.div`
@@ -126,8 +136,14 @@ const PokemonMovesTitle = styled.h2`
 `
 
 const PokemonMoves = styled.ul`
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 8px;
+        border: 1px solid black;
+    };
+    &::-webkit-scrollbar-track {
+        background: var(--pokemon-ability-container-color)
+    }
 `
 
 const PokemonMove = styled.li`
