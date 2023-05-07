@@ -44,6 +44,8 @@
    --pokemon-details-font-color: #000000;
    --pokemon-details-border-color: #000000;
    --pokemon-title-border-color: #000000;
+
+   --toggler-initial-position: 60px;
 }
 
 #notebook-container.dark {
@@ -77,4 +79,6 @@
    --pokemon-details-font-color: #fffff0f3;
    --pokemon-details-border-color: #ffffff;
    --pokemon-title-border-color: #ffffff;
+
+   --toggler-initial-position: 110px;
 }

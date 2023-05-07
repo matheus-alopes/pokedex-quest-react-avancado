@@ -45,6 +45,7 @@ const Toggler = styled.div`
     background-color: var(--button-font-color);
     box-shadow: box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
     position: absolute;
+    top: var(--toggler-initial-position);
 `
 
 const ThemesContainer = styled.div`
