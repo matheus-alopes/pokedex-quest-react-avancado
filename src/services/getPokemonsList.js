@@ -15,19 +15,25 @@ async function getPokemonDescription(url) {
 
     const listOfDescriptions = descriptionData.flavor_text_entries;
 
-    // console.log(listOfDescriptions);
+    console.log(descriptionData)
 
     for(let i = 0; i <= listOfDescriptions.length; i++) {
-                if(listOfDescriptions[i].language.name == "en") {
-                    let description = listOfDescriptions[i].flavor_text;
-
-                    const filteredDescription = description.replace(/[^a-zA-Z0-9,é,’,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
-
-                    const pokemonDescription = filteredDescription.replace(/[/é]/g, "É"); //filtrando a descrição final, para ter o caractere "é" em maiúsculo
-
-                    return pokemonDescription;
-                }
+        if (listOfDescriptions[i]) {
+            if(listOfDescriptions[i].language.name == "en") {
+                let description = listOfDescriptions[i].flavor_text;
+    
+                const filteredDescription = description.replace(/[^a-zA-Z0-9,é,’,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
+    
+                const pokemonDescription = filteredDescription.replace(/[/é]/g, "É"); //filtrando a descrição final, para ter o caractere "é" em maiúsculo
+    
+                return pokemonDescription;
             }
+        } else {
+            const pokemonDescription = "No data yet."
+
+            return pokemonDescription
+        }
+    }
 }
 
 async function getPokemonInfos(pokemonUrl) {
