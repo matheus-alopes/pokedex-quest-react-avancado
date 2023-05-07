@@ -1,5 +1,5 @@
 async function getPokemonsLinks(notebookPage) {
-    const url = `https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${notebookPage}0`;
+    const url = `https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${notebookPage}0`; //A lista vai até a página 128
 
     const response = await fetch(url);
 
