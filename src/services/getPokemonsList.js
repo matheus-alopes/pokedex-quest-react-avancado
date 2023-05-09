@@ -15,8 +15,6 @@ async function getPokemonDescription(url) {
 
     const listOfDescriptions = descriptionData.flavor_text_entries;
 
-    console.log(descriptionData)
-
     for(let i = 0; i <= listOfDescriptions.length; i++) {
         if (listOfDescriptions[i]) {
             if(listOfDescriptions[i].language.name == "en") {
@@ -29,9 +27,21 @@ async function getPokemonDescription(url) {
                 return pokemonDescription;
             }
         } else {
-            const pokemonDescription = "No data yet."
+            for(let i = 0; i <= descriptionData.genera.length; i++) {
+                if(descriptionData.genera[i].language.name == "en") {
+                    let description = descriptionData.genera[i].genus;
+    
+                    const pokemonDescription = description.replace(/[^a-zA-Z0-9,é,’,:;\-.?! ]/g, " "); //filtrando o texto, para não ter caracteres especiais
+        
+                    return pokemonDescription;
+                }
 
-            return pokemonDescription
+                if(!descriptionData.genera) {
+                    const pokemonDescription = "No data yet."
+
+                    return pokemonDescription
+                }
+            }
         }
     }
 }
@@ -41,9 +51,15 @@ async function getPokemonInfos(pokemonUrl) {
 
     const data = await response.json();
 
-    const pokemonImage = data.sprites.front_default;
+    if(data.sprites.front_default) {
+        const pokemonImage = data.sprites.front_default;
 
-    data.image = pokemonImage;
+        data.image = pokemonImage;
+    } else {
+        const pokemonImage = data.sprites.other["official-artwork"].front_default;
+
+        data.image = pokemonImage;
+    }
 
     const descriptionUrl = data.species.url;
 
@@ -67,8 +83,6 @@ async function getPokemonsList(notebookPage) {
                 pokemon.image = pokemonData.image;
 
                 pokemon.description = pokemonData.description;
-
-                // console.log(pokemon)
             }
         )
     )

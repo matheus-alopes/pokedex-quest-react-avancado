@@ -29,7 +29,7 @@ const PokemonImageContainer = styled.div`
 `
 
 const PokemonImage = styled.img`
-    min-width: 200px;
+    width: 200px;
 `
 
 const PokemonName = styled.h1`
@@ -91,7 +91,7 @@ const PokemonAbilityContainer = styled.li`
 
 const PokemonAbilityName = styled.p`
     margin-bottom: 10px;
-    padding-top: 5px;
+    padding: 5px 10px;
     text-transform: uppercase;
     text-align: center;
     font-size: 16px;

@@ -3,7 +3,7 @@ import styled from "styled-components"
 const ListItemContainer = styled.li`
   width: 500px;
   margin: 15px 0;
-  padding-left: 15px;
+  padding: 15px 0 0 15px;
   background-color: var(--pokemon-list-container-color);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 30px;
@@ -23,18 +23,18 @@ const LisItemLink = styled.div`
 `
 
 const ListItemImage = styled.div`
-  width: 120px;
-  height: 120px;
-  margin-top: 15px;
+  width: 140px;
+  height: 140px;
   grid-area: img;
   border-radius: 50%;
-  border: 1px solid var(--pokemon-list-image-border-color);
+  border: 1.5px solid var(--pokemon-list-image-border-color);
   ${
     props => `background-image: url(${props.image})`
   };
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--pokemon-list-image-container-color);
+  margin: 0 auto 15px auto;
 `
 
 const ListItemName = styled.p`
@@ -44,6 +44,8 @@ const ListItemName = styled.p`
   font-size: 32px;
   color: var(--pokemon-list-name-font-color);
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
 `
 
 const ListItemDescription = styled.p`
