@@ -42,10 +42,17 @@ export const Pokemons = () => {
         )
     }
 
+    function handleCounterInputChange() {
+        console.log("ronaldo")
+    }
+
 
     return (    
         <>
-            <PageCounterSection />
+            <PageCounterSection
+                page={notebookPageCounter + 1}
+                counterInputChangeFunction={() => handleCounterInputChange()}
+            />
 
             <BackButtonSection
                 clickFunction = { () => handleBack() }

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PageCounterContainer, PageCounterSectionContainer, PageCounterSectionTitle } from "./styles";
 import { ThemeContext } from "../../themes/theme-provider";
 
-export const PageCounterSection = () => {
+export const PageCounterSection = (props) => {
     const {theme, toggleTheme} = useContext(ThemeContext);
 
     return (
@@ -11,9 +11,7 @@ export const PageCounterSection = () => {
                 Page
             </PageCounterSectionTitle>
 
-            <PageCounterContainer>
-                
-            </PageCounterContainer>
+            <PageCounterContainer  value={props.page} onChange={props.counterInputChangeFunction}/>
         </PageCounterSectionContainer>
     )
 }
