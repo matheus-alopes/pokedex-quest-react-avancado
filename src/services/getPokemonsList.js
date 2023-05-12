@@ -5,15 +5,6 @@ async function getPokemonsLinks(notebookPage) {
 
     const data = await response.json();
 
-    // const alternativeResponse = await fetch("https://pokeapi.co/api/v2/pokemon/");
-    // const alternativeData = await alternativeResponse.json()
-    // const amountOfPokemon = alternativeData.count
-    // const allPokemonList = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${amountOfPokemon}`);
-    // const allPokemonData = await allPokemonList.json();
-    // await console.log(allPokemonData);
-
-    // Próxima missão: gerar logo a lista com todos os pokemons, para, ao trocar de página, só pegar 10 itens diferentes dessa lista
-
     return data.results;
 }
 

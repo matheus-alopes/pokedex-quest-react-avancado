@@ -5,6 +5,7 @@ import { PokemonList } from "./styles";
 import { NextButtonSection } from "../next-button-section";
 import { BackButtonSection } from "../back-button-section"
 import { ThemeTogglerButton } from "../theme-toggler-button";
+import { PageCounterSection } from "../page-counter-section";
 
 export const Pokemons = () => {
     const pageCounter = Number(localStorage.pageCounter); //O localStorage armazena no formato "string"
@@ -44,6 +45,8 @@ export const Pokemons = () => {
 
     return (    
         <>
+            <PageCounterSection />
+
             <BackButtonSection
                 clickFunction = { () => handleBack() }
                 height={"small"}

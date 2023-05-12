@@ -73,12 +73,6 @@ const ArrowAnimation = keyframes`
     }
 `
 
-// const BackButtonImage = styled.img`
-//     width: 26px;
-//     position: absolute;
-//     animation: ${ArrowAnimation} 1s ease-in-out infinite;
-// `
-
 const BackButtonImage = styled.div`
     width: 40px;
     height: 40px;

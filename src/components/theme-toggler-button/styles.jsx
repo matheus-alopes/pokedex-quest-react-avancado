@@ -3,7 +3,7 @@ import styled from "styled-components"
 const ThemeTogglerContainer = styled.div`
     position: absolute;
     left: 0;
-    top: 200px;
+    top: 400px;
     width: 170px;
     height: 150px;
     background-color: var(--button-background-color);
@@ -43,7 +43,6 @@ const Toggler = styled.div`
     height: 25px;
     border-radius: 50%;
     background-color: var(--button-font-color);
-    box-shadow: box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
     position: absolute;
     top: var(--toggler-initial-position);
 `
