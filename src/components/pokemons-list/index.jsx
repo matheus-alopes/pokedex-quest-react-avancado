@@ -14,6 +14,8 @@ export const Pokemons = () => {
     
     const [pokemonsList, setPokemonsList] = useState([])
 
+    const [inputPageNumber, setInputPageNumber] = useState((pageCounter ? pageCounter : 0) + 1)
+
     useEffect (
         () => {
            async function fetchPokemons() {
@@ -25,6 +27,14 @@ export const Pokemons = () => {
            }
 
            fetchPokemons();
+        }
+        ,
+        [notebookPageCounter]
+    )
+
+    useEffect (
+        () => {
+           setInputPageNumber(notebookPageCounter + 1);
         }
         ,
         [notebookPageCounter]
@@ -42,16 +52,20 @@ export const Pokemons = () => {
         )
     }
 
-    function handleCounterInputChange() {
-        console.log("ronaldo")
+    function handleInputPageNumberChange(event) {
+        const newPageNumber = parseInt(event.target.value, 10) - 1; // Subtrai 1 para ajustar à indexação base 0
+
+        if (newPageNumber >= 0 && newPageNumber <= 127) { // Verifica se o número da página está dentro do intervalo válido (0-127)
+          setNotebookPageCounter(newPageNumber);
+        }
     }
 
 
     return (    
         <>
             <PageCounterSection
-                page={notebookPageCounter + 1}
-                counterInputChangeFunction={() => handleCounterInputChange()}
+                inputPageValue= { inputPageNumber }
+                inputPageNumberChangeFunction={ handleInputPageNumberChange }
             />
 
             <BackButtonSection

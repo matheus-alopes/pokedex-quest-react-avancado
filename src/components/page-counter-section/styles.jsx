@@ -19,7 +19,7 @@ const PageCounterSectionContainer = styled.div`
 const PageCounterSectionTitle = styled.h2`
     font-weight: 500;
 `
-const PageCounterContainer = styled.input`
+const PageCounter = styled.input`
     width: 100px;
     height: 50px;
     background-color: var(--button-background-hover-color);
@@ -34,4 +34,4 @@ const PageCounterContainer = styled.input`
     }
 `
 
-export { PageCounterSectionContainer, PageCounterSectionTitle, PageCounterContainer }
+export { PageCounterSectionContainer, PageCounterSectionTitle, PageCounter }
