@@ -7,11 +7,22 @@ const ListItemContainer = styled.li`
   background-color: var(--pokemon-list-container-color);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 30px;
+  position: relative;
   cursor: pointer;
   &:hover {
     box-shadow: var(--box-shadow) 0px 5px 15px;
     transition: 0.3s ease-in-out;
   }
+`
+
+const FavoritePokemonContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+  font-color: blue;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `
 
 const LisItemLink = styled.div`
@@ -60,4 +71,4 @@ const ListItemDescription = styled.p`
   color: var(--pokemon-list-description-font-color)
 `
 
-export {LisItemLink, ListItemContainer, ListItemDescription, ListItemImage, ListItemName}
+export {ListItemContainer, FavoritePokemonContainer, LisItemLink, ListItemDescription, ListItemImage, ListItemName}
