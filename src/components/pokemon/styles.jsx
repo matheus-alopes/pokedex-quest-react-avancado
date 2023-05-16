@@ -16,13 +16,10 @@ const ListItemContainer = styled.li`
 `
 
 const FavoritePokemonContainer = styled.div`
-  width: 40px;
-  height: 40px;
-  background-color: yellow;
-  font-color: blue;
+  font-size: 28px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
 `
 
 const LisItemLink = styled.div`

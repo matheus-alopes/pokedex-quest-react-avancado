@@ -14,8 +14,6 @@ export const Pokemons = () => {
     
     const [pokemonsList, setPokemonsList] = useState([])
 
-    // const [inputPageNumber, setInputPageNumber] = useState((pageCounter ? pageCounter : 0) + 1)
-
     const [inputPageNumber, setInputPageNumber] = useState("");
 
     useEffect (
