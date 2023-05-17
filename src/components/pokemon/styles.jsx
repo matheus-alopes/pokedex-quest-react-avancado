@@ -18,8 +18,8 @@ const ListItemContainer = styled.li`
 const FavoritePokemonContainer = styled.div`
   font-size: 28px;
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 4px;
+  right: 10px;
 `
 
 const LisItemLink = styled.div`
@@ -47,6 +47,7 @@ const ListItemImage = styled.div`
 
 const ListItemName = styled.p`
   grid-area: name;
+  margin-top: 8px;
   padding: 15px 0 0 15px;
   font-weight: bold;
   font-size: 32px;

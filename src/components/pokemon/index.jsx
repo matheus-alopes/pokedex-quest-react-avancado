@@ -14,9 +14,7 @@ export const Pokemon = (props) => {
                 }
                 onClick={
                   event => {
-                    console.log(event.target.style.color);
-
-                    event.target.style.color = "yellow"
+                    event.target.style.color == "yellow" ? event.target.style.color = "var(--button-background-color)" : event.target.style.color = "yellow";
                   } 
                 }
               />
