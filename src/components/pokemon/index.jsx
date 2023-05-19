@@ -4,19 +4,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 export const Pokemon = (props) => {
+  const favoritePokemons = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
+
+  const isPokemonFavorite = favoritePokemons.includes(props.id);
+
+  const handleToggleFavorite = (event) => {
+    event.target.style.color == "yellow" ? event.target.style.color = "var(--button-background-color)" : event.target.style.color = "yellow";
+
+    if (isPokemonFavorite) {
+      const updatedFavorites = favoritePokemons.filter((pokemonId) => pokemonId !== props.id);
+
+      localStorage.setItem("favoritePokemons", JSON.stringify(updatedFavorites));
+    } else {
+      const updatedFavorites = [...favoritePokemons, props.id];
+
+      localStorage.setItem("favoritePokemons", JSON.stringify(updatedFavorites));
+    }
+
+    console.log(localStorage)
+  }
+
   return (
           <ListItemContainer>
             <FavoritePokemonContainer>
               <FontAwesomeIcon
                 icon={faStar}
                 style={
-                  {color: "var(--button-background-color)"}
+                  {color: isPokemonFavorite ? "yellow" : "var(--button-background-color)"}
                 }
-                onClick={
-                  event => {
-                    event.target.style.color == "yellow" ? event.target.style.color = "var(--button-background-color)" : event.target.style.color = "yellow";
-                  } 
-                }
+                onClick={handleToggleFavorite}
               />
             </FavoritePokemonContainer>
 
