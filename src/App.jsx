@@ -1,5 +1,5 @@
 import { AppRoutes } from "./pages/routes"
-import { ThemeProvider } from "./themes/theme-provider"
+import { ThemeProvider } from "./contexts/theme-provider"
 
 function App() {
   window.addEventListener('beforeunload', () => {

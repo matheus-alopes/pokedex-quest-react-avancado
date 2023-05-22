@@ -16,13 +16,7 @@ export const Pokemon = (props) => {
                 style={
                   {color: "var(--button-background-color)"}
                 }
-                onClick={
-                  (event) => {
-                    toggleFavorite();
-  
-                    event.target.style.color == "var(--button-background-color)" ? event.target.style.color = "yellow" : event.target.style.color = "var(--button-background-color)"
-                  }
-                }
+                onClick={() => toggleFavorite(props.id)}
               />
             </FavoritePokemonContainer>
 

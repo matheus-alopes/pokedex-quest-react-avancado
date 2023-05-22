@@ -2,7 +2,7 @@ import {NotebookContainer, Header, HeaderTitle, HeaderImage} from "./styles"
 import pokeball from "../../assets/images/pokeball.png"
 import { Pokemons } from "../pokemons-list";
 import { useContext } from "react";
-import { ThemeContext } from "../../themes/theme-provider";
+import { ThemeContext } from "../../contexts/theme-provider";
 
 export const Diary = () => {
     const {theme} = useContext(ThemeContext)

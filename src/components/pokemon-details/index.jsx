@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
 import { BackButtonSection } from "../back-button-section"
 import { PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer, PokemonMove, PokemonMoves, PokemonMovesTitle } from "./styles"
-import { ThemeContext } from "../../themes/theme-provider"
+import { ThemeContext } from "../../contexts/theme-provider"
 
 export const PokemonDetails = () => {
     const {id} = useParams();
