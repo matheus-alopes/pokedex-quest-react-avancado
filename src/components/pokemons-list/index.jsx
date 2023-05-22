@@ -6,6 +6,7 @@ import { NextButtonSection } from "../next-button-section";
 import { BackButtonSection } from "../back-button-section"
 import { ThemeTogglerButton } from "../theme-toggler-button";
 import { PageCounterSection } from "../page-counter-section";
+import { FavoritesProvider } from "../../contexts/favorites-provider";
 
 export const Pokemons = () => {
     const pageCounter = Number(localStorage.pageCounter); //O localStorage armazena no formato "string"
@@ -64,7 +65,7 @@ export const Pokemons = () => {
     }
 
     return (    
-        <>
+        <FavoritesProvider>
             <PageCounterSection
                 inputPageValue= { inputPageNumber }
                 inputPageNumberChangeFunction={ handleInputPageNumberChange }
@@ -97,6 +98,6 @@ export const Pokemons = () => {
             </ PokemonList>
 
             <NextButtonSection clickFunction = { ()=> handleNext() } />
-        </>
+        </FavoritesProvider>
     )
 }

@@ -1,6 +1,4 @@
 import { createContext, useState } from "react";
-// import { themes } from "./themes";
-
 
 const ThemeContext = createContext()
 

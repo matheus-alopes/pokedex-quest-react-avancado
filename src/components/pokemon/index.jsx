@@ -2,27 +2,11 @@ import {FavoritePokemonContainer, LisItemLink, ListItemContainer, ListItemDescri
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from "react"
+import { FavoritesContext } from "../../contexts/favorites-provider"
 
 export const Pokemon = (props) => {
-  const favoritePokemons = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
-
-  const isPokemonFavorite = favoritePokemons.includes(props.id);
-
-  const handleToggleFavorite = (event) => {
-    event.target.style.color == "yellow" ? event.target.style.color = "var(--button-background-color)" : event.target.style.color = "yellow";
-
-    if (isPokemonFavorite) {
-      const updatedFavorites = favoritePokemons.filter((pokemonId) => pokemonId !== props.id);
-
-      localStorage.setItem("favoritePokemons", JSON.stringify(updatedFavorites));
-    } else {
-      const updatedFavorites = [...favoritePokemons, props.id];
-
-      localStorage.setItem("favoritePokemons", JSON.stringify(updatedFavorites));
-    }
-
-    console.log(localStorage)
-  }
+  const { favoritePokemonsIds, toggleFavorite } = useContext(FavoritesContext)
 
   return (
           <ListItemContainer>
@@ -30,9 +14,15 @@ export const Pokemon = (props) => {
               <FontAwesomeIcon
                 icon={faStar}
                 style={
-                  {color: isPokemonFavorite ? "yellow" : "var(--button-background-color)"}
+                  {color: "var(--button-background-color)"}
                 }
-                onClick={handleToggleFavorite}
+                onClick={
+                  (event) => {
+                    toggleFavorite();
+  
+                    event.target.style.color == "var(--button-background-color)" ? event.target.style.color = "yellow" : event.target.style.color = "var(--button-background-color)"
+                  }
+                }
               />
             </FavoritePokemonContainer>
 
@@ -41,6 +31,8 @@ export const Pokemon = (props) => {
               onClick={
                 () => {
                   localStorage.setItem("pageCounter", props.listPage);
+
+                  console.log(favoritePokemonsIds);
                 }
               }
             >
