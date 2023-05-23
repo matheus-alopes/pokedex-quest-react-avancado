@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const FavoritesContext = createContext();
 
 const FavoritesProvider = (props) => {
-  const [favoritePokemonsIds, setFavoritePokemonsIds] = useState([]);
+  const [favoritePokemonsIds, setFavoritePokemonsIds] = useState(localStorage.favoritesList ? localStorage.favoritesList : []);
 
   const toggleFavorite = (pokemonId) => {
     if (favoritePokemonsIds.includes(pokemonId)) {
