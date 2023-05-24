@@ -1,8 +1,8 @@
 import styled, {css, keyframes} from "styled-components"
 
 const BackButtonContainer = styled.div`
-    position: absolute;
-    left: 0;
+    grid-area: header;
+    width: 130px;
     ${
         props => props.height == "small" && css `
             height: 152px;
@@ -12,9 +12,11 @@ const BackButtonContainer = styled.div`
     ${
         props => props.height == "big" && css `
             height: 100%;
+            position: absolute;
+            left: 0;
         `
     }
-    width: 130px;
+    
     background-color: var(--button-container-color);
     font-size: 26px;
     font-weight: bold;

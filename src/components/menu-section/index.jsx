@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { PageCounterContext } from "../../contexts/page-counter-provider";
 import { PageCounterSection } from "../page-counter-section"
 import { ThemeTogglerButton } from "../theme-toggler-button"
+import { MenuSectionContainer } from "./styles";
 
 const MenuSection = () => {
     const [inputPageNumber, setInputPageNumber] = useState("");
@@ -28,14 +29,14 @@ const MenuSection = () => {
     }
 
     return (
-        <>
+        <MenuSectionContainer>
             <PageCounterSection
                 inputPageValue= { inputPageNumber }
                 inputPageNumberChangeFunction={ handleInputPageNumberChange }
             />
 
             <ThemeTogglerButton />
-        </>
+        </MenuSectionContainer>
     )
 }
 

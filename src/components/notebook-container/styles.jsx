@@ -5,17 +5,16 @@ const NotebookContainer = styled.div`
     width: 95vw;
     max-width: 1400px;
     margin: auto;
-    padding-left: 190px;
     background-image: var(--notebook-background-image);
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
-    flex-direction: column;
     position: relative;
 `
 
 const Header = styled.header`
+    grid-area: header;
+    width: 100%;
     padding-top: 50px;
     display: flex;
     justify-content: center;

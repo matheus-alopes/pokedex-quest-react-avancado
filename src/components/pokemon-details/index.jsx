@@ -27,7 +27,7 @@ export const PokemonDetails = () => {
     )
 
     return (
-        <div id="notebook-container" className={theme}>
+        <div id="notebook-container" className={`${theme} details`}>
             <BackButtonSection height={"big"} />
 
             <PokemonContainer>

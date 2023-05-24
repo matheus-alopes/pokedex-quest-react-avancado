@@ -1,10 +1,11 @@
 import styled, {keyframes} from "styled-components"
 
 const NextButtonContainer = styled.div`
-    position: absolute;
-    right: 0;
+    grid-area: header;
     height: 152px;
     width: 130px;
+    position: absolute;
+    right: 0;
     background-color: var(--button-container-color);
     font-size: 26px;
     font-weight: bold;
