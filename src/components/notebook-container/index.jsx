@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { ThemeContext } from "../../contexts/theme-provider";
 import { PageCounterContext } from "../../contexts/page-counter-provider";
 import { FavoritesProvider } from "../../contexts/favorites-provider";
-import {NotebookContainer, Header, HeaderTitle, HeaderImage} from "./styles"
-import pokeball from "../../assets/images/pokeball.png"
+import {NotebookContainer, Header, HeaderTitle, HeaderImage} from "./styles";
+import pokeball from "../../assets/images/pokeball.png";
 import { BackButtonSection } from "../back-button-section";
 import { NextButtonSection } from "../next-button-section";
 import { MenuSection } from "../menu-section";
