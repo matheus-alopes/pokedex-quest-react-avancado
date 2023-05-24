@@ -1,8 +1,11 @@
 import { Diary } from "../components/notebook-container"
+import { PageCounterProvider } from "../contexts/page-counter-provider"
 
 const PokemonDiaryPage = () => {
     return (
-        <Diary />
+        <PageCounterProvider>
+            <Diary />
+        </PageCounterProvider>
     )
 }
 
