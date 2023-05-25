@@ -62,6 +62,7 @@ const PokemonType = styled.li`
     padding: 3px;
     border: 1px solid var(--pokemon-list-image-border-color);
     border-radius: 5px;
+    background-color: var(--pokemon-list-description-container-color);
     color: var(--pokemon-list-description-font-color);
 `
 
