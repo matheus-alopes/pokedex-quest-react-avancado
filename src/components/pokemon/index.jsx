@@ -1,4 +1,4 @@
-import { FavoritePokemonContainer, LisItemLink, ListItemContainer, ListItemDescription, ListItemImage, ListItemName } from "./styles"
+import { FavoritePokemonContainer, LisItemLink, ListItemContainer, ListItemDescription, ListItemImage, PokemonImageTypeContainer, PokemonTypeList, PokemonType, ListItemName } from "./styles"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
@@ -38,7 +38,18 @@ export const Pokemon = (props) => {
         }}
       >
         <LisItemLink>
-          <ListItemImage image={props.image} />
+          <PokemonImageTypeContainer>
+            <ListItemImage image={props.image} />
+
+            <PokemonTypeList>
+              {
+                props.type && props.type.map(
+                  type => <PokemonType key={type.slot}>{type.type.name}</PokemonType>
+                )
+              }
+            </PokemonTypeList>
+          </PokemonImageTypeContainer>
+
           <ListItemName>{props.name}</ListItemName>
           <ListItemDescription>{props.description}</ListItemDescription>
         </LisItemLink>

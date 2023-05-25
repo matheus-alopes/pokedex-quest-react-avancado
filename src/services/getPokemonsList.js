@@ -83,6 +83,8 @@ async function getPokemonsList(notebookPage) {
                 pokemon.image = pokemonData.image;
 
                 pokemon.description = pokemonData.description;
+
+                pokemon.type = pokemonData.types
             }
         )
     )

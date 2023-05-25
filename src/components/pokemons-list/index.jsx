@@ -34,6 +34,7 @@ export const Pokemons = () => {
                         <Pokemon
                             name={pokemon.name}
                             image={pokemon.image}
+                            type={pokemon.type}
                             key={pokemon.url}
                             description={pokemon.description}
                             listPage={notebookPageCounter}
