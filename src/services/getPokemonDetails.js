@@ -9,7 +9,7 @@ async function getAbilityDetails(abilityUrl) {
 async function getPokemonDetails(pokemonId) {
     
     if(pokemonId > 1010) {
-        pokemonId = (pokemonId * 10) - (((pokemonId - 1000) * 10) - 1)
+        pokemonId = 10000 + (pokemonId % 1000) - 10 //Com esse cálculo, consigo acessar corretamente o endpoint dos pokemons que alteram seu id a partir da página 101
     }
 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
