@@ -1,3 +1,5 @@
+import interrogation from "../assets/images/interrogation.png"
+
 async function getPokemonsLinks(notebookPage) {
     const url = `https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${notebookPage}0`; //A lista vai até a página 128
 
@@ -81,6 +83,12 @@ async function getPokemonsList(notebookPage) {
                 const pokemonData = await getPokemonInfos(url)
     
                 pokemon.image = pokemonData.image;
+
+                if(pokemonData.image) {
+                    pokemon.image = pokemonData.image;
+                } else {
+                    pokemon.image = interrogation;
+                }
 
                 pokemon.description = pokemonData.description;
 

@@ -1,3 +1,5 @@
+import interrogation from "../assets/images/interrogation.png"
+
 async function getAbilityDetails(abilityUrl) {
     const response = await fetch(abilityUrl);
 
@@ -33,6 +35,10 @@ async function getPokemonDetails(pokemonId) {
         const pokemonImage = data.sprites.other["official-artwork"].front_default;
 
         pokemon.image = pokemonImage;
+    }
+
+    if(pokemon.image == null) {
+        pokemon.image = interrogation;
     }
 
     await Promise.all(

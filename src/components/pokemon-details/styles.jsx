@@ -19,17 +19,23 @@ const PokemonImageAndNameContainer = styled.div`
 const PokemonImageContainer = styled.div`
     width: 100%;
     max-width: 500px;
-    max-height: 250px;
+    min-width: 400px;
+    max-height: 300px;
+    min-height: 250px;
     border-radius: 5px;
     background-image: var(--pokemon-details-background-image);
     background-size: cover;
     background-position:bottom;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    position: relative;
 `
 
 const PokemonImage = styled.img`
-    width: 200px;
+    width: 180px;
+    max-height: 220px;
+    position: absolute;
+    bottom: 3px;
 `
 
 const PokemonName = styled.h1`

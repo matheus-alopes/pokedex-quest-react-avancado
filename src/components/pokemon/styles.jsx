@@ -47,8 +47,9 @@ const ListItemImage = styled.div`
     props => `background-image: url(${props.image})`
   };
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-color: var(--pokemon-list-image-container-color);
+  background-position: center;
 `
 
 const PokemonTypeList = styled.ul`
