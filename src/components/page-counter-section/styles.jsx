@@ -1,15 +1,14 @@
 import styled from "styled-components"
 
 const PageCounterSectionContainer = styled.div`
-    position: absolute;
-    left: 10px;
-    top: 180px;
     width: 150px;
     height: 150px;
     padding: 20px 0;
     background-color: var(--button-background-color);
-    border-radius: 50%;
+    border: 1px solid var(--background-color);
+    border-radius: 40%;
     color: var(--button-font-color);
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +19,7 @@ const PageCounterSectionTitle = styled.h2`
     font-weight: 500;
 `
 const PageCounter = styled.input`
-    width: 100px;
+    width: 80px;
     height: 50px;
     background-color: var(--button-background-hover-color);
     box-shadow: inset 0 0 8px var(--button-border-color);
