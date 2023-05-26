@@ -7,7 +7,12 @@ async function getAbilityDetails(abilityUrl) {
 }
 
 async function getPokemonDetails(pokemonId) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`);
+    
+    if(pokemonId > 1010) {
+        pokemonId = (pokemonId * 10) - (((pokemonId - 1000) * 10) - 1)
+    }
+
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
 
     const data = await response.json();
 

@@ -33,8 +33,9 @@ export const Pokemon = (props) => {
       <Link
         to={`/pokemon/${props.id}`}
         onClick={() => {
-          localStorage.setItem("pageCounter", props.listPage)
-          console.log(localStorage)
+          localStorage.setItem("pageCounter", props.listPage);
+
+          console.log(props.id)
         }}
       >
         <LisItemLink>

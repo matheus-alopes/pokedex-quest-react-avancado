@@ -59,7 +59,7 @@ const PokemonTypeList = styled.ul`
 
 const PokemonType = styled.li`
     margin: 0 10px;
-    padding: 3px;
+    padding: 3px 5px;
     border: 1px solid var(--pokemon-list-image-border-color);
     border-radius: 5px;
     background-color: var(--pokemon-list-description-container-color);
