@@ -116,8 +116,8 @@ const PokemonAbilityDescription = styled.div`
         border: 1px solid black;
     };
     &::-webkit-scrollbar-track {
-        background: var(--pokemon-ability-container-color)
-    }
+        background: var(--pokemon-ability-container-color);
+    };
 `
 
 const PokemonMovesContainer = styled.div`

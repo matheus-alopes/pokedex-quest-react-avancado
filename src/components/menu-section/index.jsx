@@ -3,6 +3,7 @@ import { PageCounterContext } from "../../contexts/page-counter-provider";
 import { PageCounterSection } from "../page-counter-section"
 import { ThemeTogglerButton } from "../theme-toggler-button"
 import { MenuSectionContainer } from "./styles";
+import { FilterFavoriteSection } from "../filter-favorite-section";
 
 const MenuSection = () => {
     const [inputPageNumber, setInputPageNumber] = useState("");
@@ -34,6 +35,8 @@ const MenuSection = () => {
                 inputPageValue= { inputPageNumber }
                 inputPageNumberChangeFunction={ handleInputPageNumberChange }
             />
+
+            <FilterFavoriteSection />
 
             <ThemeTogglerButton />
         </MenuSectionContainer>

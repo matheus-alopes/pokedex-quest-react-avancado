@@ -14,7 +14,8 @@ body {
     display: grid;
     grid-template-areas: "header header header"
                          "menu pokemons pokemons";
-    grid-template-columns: 180px 1fr 1fr;
+    grid-template-columns: 186px 1fr 1fr;
+    grid-template-rows: min-content;
 }
 
 #notebook-container header {

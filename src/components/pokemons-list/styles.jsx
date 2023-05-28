@@ -5,7 +5,7 @@ const PokemonList = styled.ul`
     margin: 60px 30px 0 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 `
 
 export {PokemonList}

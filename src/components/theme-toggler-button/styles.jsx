@@ -1,11 +1,8 @@
 import styled from "styled-components"
 
 const ThemeTogglerContainer = styled.div`
-    position: absolute;
-    left: 0;
-    top: 400px;
-    width: 170px;
-    height: 150px;
+    width: 160px;
+    height: 140px;
     background-color: var(--button-background-color);
     border-radius: 0 8px 8px 0;
     color: var(--button-font-color);
@@ -13,6 +10,7 @@ const ThemeTogglerContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.34) 4px 4px 8px;
 `
 
 const ThemeTogglerTitle = styled.h2`
@@ -36,6 +34,7 @@ const TogglerButton = styled.div`
     background-color: var(--background-color);
     opacity: 0.8;
     border: 5px inset var(--button-border-color);
+    position: relative;
 `
 
 const Toggler = styled.div`

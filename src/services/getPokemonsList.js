@@ -93,8 +93,6 @@ async function getPokemonsList(notebookPage) {
                 pokemon.description = pokemonData.description;
 
                 pokemon.type = pokemonData.types
-
-                console.log(pokemon)
             }
         )
     )

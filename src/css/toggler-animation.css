@@ -1,18 +1,18 @@
 @keyframes moveUp {
     0% {
-        top: 110px;
+        top: 53px;
     }
     100% {
-        top: 60px;
+        top: 3px;
     }
 }
 
 @keyframes moveDown {
     0% {
-        top: 60px;
+        top: 3px;
     }
     100% {
-        top: 110px;
+        top: 53px;
     }
 }
 

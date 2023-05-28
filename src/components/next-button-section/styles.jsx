@@ -27,6 +27,7 @@ const NextButton = styled.button`
     transition: 0.3s ease-in-out;
     &:hover {
         background-color: var(--button-background-hover-color);
+        border: 1px solid var(--button-background-hover-color);
     }
     position: relative;
     display:flex;

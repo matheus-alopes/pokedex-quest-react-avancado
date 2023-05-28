@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 const ListItemContainer = styled.li`
   width: 500px;
+  max-height: 333px;
   margin: 15px 0;
   padding: 15px 0 0 15px;
   background-color: var(--pokemon-list-container-color);
@@ -70,9 +71,9 @@ const PokemonType = styled.li`
 const ListItemName = styled.p`
   grid-area: name;
   margin-top: 8px;
-  padding: 15px 0 0 15px;
+  padding: 15px 3px 0 15px;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--pokemon-list-name-font-color);
   text-transform: uppercase;
   display: flex;
@@ -89,6 +90,14 @@ const ListItemDescription = styled.p`
   border-bottom-right-radius: 30px;
   background-color: var(--pokemon-list-description-container-color);
   color: var(--pokemon-list-description-font-color);
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+    border: 1px solid black;
+  };
+  &::-webkit-scrollbar-track {
+    background: var(--pokemon-ability-container-color);
+  };
 `
 
 export {ListItemContainer, FavoritePokemonContainer, LisItemLink, ListItemDescription, ListItemImage, PokemonImageTypeContainer, PokemonTypeList, PokemonType, ListItemName}
