@@ -10,7 +10,7 @@ const ThemeTogglerContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    box-shadow: rgba(0, 0, 0, 0.34) 4px 4px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 4px 4px 8px;
 `
 
 const ThemeTogglerTitle = styled.h2`

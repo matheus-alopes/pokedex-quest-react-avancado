@@ -5,7 +5,7 @@ const FilterFavoriteContainer = styled.div`
     height: 140px;
     border-radius: 8px 0 0 8px;
     background-color: var(--button-background-color);
-    box-shadow: rgba(0, 0, 0, 0.34) -4px 4px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) -4px 4px 8px;
     color: var(--button-font-color);
     align-self: flex-end;
     display: flex;
