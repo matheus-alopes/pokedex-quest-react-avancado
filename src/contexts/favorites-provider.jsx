@@ -5,6 +5,8 @@ const FavoritesContext = createContext();
 const FavoritesProvider = (props) => {
   const [favoritePokemonsIds, setFavoritePokemonsIds] = useState(localStorage.favoritesList ? JSON.parse(localStorage.favoritesList) : []);
 
+  const [filterFavorites, setFilterFavorites] = useState(false);
+
   const toggleFavorite = (pokemonId) => {
     if (favoritePokemonsIds.includes(pokemonId)) {
       console.log(`pokemon ${pokemonId} retirado dos favoritos`);
@@ -32,7 +34,7 @@ const FavoritesProvider = (props) => {
   };
 
   return (
-    <FavoritesContext.Provider value={{ favoritePokemonsIds, toggleFavorite }}>
+    <FavoritesContext.Provider value={{ favoritePokemonsIds, toggleFavorite, filterFavorites, setFilterFavorites }}>
       {props.children}
     </FavoritesContext.Provider>
   );

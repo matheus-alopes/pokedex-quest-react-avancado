@@ -1,16 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FilterFavoriteContainer, FilterFavoriteIcon, FilterFavoriteTitle } from "./styles"
+import { getFavoritePokemonsDetails } from "../../services/getFavoritePokemons";
+import { useContext } from "react";
+import { FavoritesContext } from "../../contexts/favorites-provider";
 
 export const FilterFavoriteSection = () => {
-    function handdleFilterFavorite(event) {
+    const { favoritePokemonsIds } = useContext(FavoritesContext);
+
+    async function handdleFilterFavorite(event) {
         const iconContainer = document.getElementById("filter-favorite-container");
 
         if (event.target.style.color == "white") {
             event.target.style.color = "rgb(255, 243, 50)"
             
             iconContainer.style.backgroundColor = "var(--button-background-color)";
-            iconContainer.style.boxShadow = "var(--box-shadow) 0px 5px 15px"; 
+            iconContainer.style.boxShadow = "var(--box-shadow) 0px 5px 15px";
+
+            console.log(favoritePokemonsIds)
+
+            const favoritesDetails = await getFavoritePokemonsDetails(favoritePokemonsIds);
+
+            await console.log(favoritesDetails);
         } else {
             event.target.style.color = "white"
 
