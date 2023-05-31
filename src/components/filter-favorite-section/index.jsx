@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { FavoritesContext } from "../../contexts/favorites-provider";
 
 export const FilterFavoriteSection = () => {
-    const { favoritePokemonsIds } = useContext(FavoritesContext);
+    const { favoritePokemonsIds, setFilterFavorites, favoritesPokemonsList, setFavoritesPokemonsList } = useContext(FavoritesContext);
 
     async function handdleFilterFavorite(event) {
         const iconContainer = document.getElementById("filter-favorite-container");
@@ -17,19 +17,26 @@ export const FilterFavoriteSection = () => {
             iconContainer.style.backgroundColor = "var(--button-background-color)";
             iconContainer.style.boxShadow = "var(--box-shadow) 0px 5px 15px";
 
-            console.log(favoritePokemonsIds)
+            console.log(favoritePokemonsIds);
 
             const favoritesDetails = await getFavoritePokemonsDetails(favoritePokemonsIds);
 
-            await console.log(favoritesDetails);
+            setFavoritesPokemonsList(
+                () => favoritesDetails
+            );
+
+            setFilterFavorites( () => true);
+
+            console.log(favoritesPokemonsList)
         } else {
             event.target.style.color = "white"
 
             iconContainer.style.backgroundColor = "rgb(255, 243, 128, 0.7)";
-            iconContainer.style.boxShadow = "none"; 
+            iconContainer.style.boxShadow = "none";
+
+            setFilterFavorites( () => false);
         }
     }
-
 
     return (
         <FilterFavoriteContainer>

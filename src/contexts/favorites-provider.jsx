@@ -5,6 +5,8 @@ const FavoritesContext = createContext();
 const FavoritesProvider = (props) => {
   const [favoritePokemonsIds, setFavoritePokemonsIds] = useState(localStorage.favoritesList ? JSON.parse(localStorage.favoritesList) : []);
 
+  const [favoritesPokemonsList, setFavoritesPokemonsList] = useState([]);
+
   const [filterFavorites, setFilterFavorites] = useState(false);
 
   const toggleFavorite = (pokemonId) => {
@@ -34,7 +36,7 @@ const FavoritesProvider = (props) => {
   };
 
   return (
-    <FavoritesContext.Provider value={{ favoritePokemonsIds, toggleFavorite, filterFavorites, setFilterFavorites }}>
+    <FavoritesContext.Provider value={{ favoritePokemonsIds, toggleFavorite, favoritesPokemonsList, setFavoritesPokemonsList, filterFavorites, setFilterFavorites }}>
       {props.children}
     </FavoritesContext.Provider>
   );

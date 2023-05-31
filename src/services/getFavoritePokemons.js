@@ -38,25 +38,31 @@ async function getPokemonDescription(url) {
     }
 }
 
-async function getFavoritePokemonsDetails(FavoritePokemonsIds) {
+async function getFavoritePokemonsDetails(favoritePokemonsIds) {
     const favoritePokemonsArray = await Promise.all(
-        FavoritePokemonsIds.map (
+        favoritePokemonsIds.map (
             async pokemonId => {
                 if(pokemonId > 1010) {
                     pokemonId = 10000 + (pokemonId % 1000) - 10 //Com esse cálculo, consigo acessar corretamente o endpoint dos pokemons que alteram seu id a partir da página 101
                 }
                 
-                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`);
             
                 const data = await response.json();
             
-                await console.log(data)
+                await console.log(data);
             
+                const descriptionUrl = data.species.url;
+            
+                const pokemonDescription = await getPokemonDescription(descriptionUrl);
+                
                 const pokemon = {
                     name: data.name,
-                    types: data.types,
+                    id: pokemonId,
+                    type: data.types,
+                    description: pokemonDescription,
                 }
-            
+
                 if(data.sprites.front_default) {
                     const pokemonImage = data.sprites.front_default;
             
@@ -70,15 +76,11 @@ async function getFavoritePokemonsDetails(FavoritePokemonsIds) {
                 if(pokemon.image == null) {
                     pokemon.image = interrogation;
                 }
-            
-                const descriptionUrl = data.species.url;
-            
-                const pokemonDescription = await getPokemonDescription(descriptionUrl);
-                
-                pokemon.description = pokemonDescription;   
+
+                return pokemon
             }
         )
-    )  
+    )
 
     return favoritePokemonsArray
 }

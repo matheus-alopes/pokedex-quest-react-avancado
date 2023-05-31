@@ -1,13 +1,14 @@
 import { useEffect, useState, useContext } from "react";
 import { PageCounterContext } from "../../contexts/page-counter-provider";
+import { FavoritesContext } from "../../contexts/favorites-provider";
 import { PokemonList } from "./styles";
 import { getPokemonsList } from "../../services/getPokemonsList";
 import { Pokemon } from "../pokemon";
 
-
 export const Pokemons = () => {
     const { notebookPageCounter } = useContext(PageCounterContext)
-    
+    const { favoritesPokemonsList, filterFavorites } = useContext(FavoritesContext);
+
     const [pokemonsList, setPokemonsList] = useState([])
 
     useEffect (
@@ -26,6 +27,20 @@ export const Pokemons = () => {
         [notebookPageCounter]
     )
 
+    useEffect (
+        () => {
+           async function fetchPokemons() {
+            setPokemonsList(favoritesPokemonsList);
+
+            await console.log(favoritesPokemonsList);
+           }
+
+           fetchPokemons();
+        }
+        ,
+        [filterFavorites]
+    )
+
     return (    
         <PokemonList>
             {   
@@ -35,7 +50,7 @@ export const Pokemons = () => {
                             name={pokemon.name}
                             image={pokemon.image}
                             type={pokemon.type}
-                            key={pokemon.url}
+                            key={pokemon.id}
                             description={pokemon.description}
                             listPage={notebookPageCounter}
                             id={
