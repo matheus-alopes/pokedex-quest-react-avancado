@@ -29,13 +29,25 @@ export const Pokemons = () => {
 
     useEffect (
         () => {
-           async function fetchPokemons() {
-            setPokemonsList(favoritesPokemonsList);
+            async function fetchFavoritePokemons() {
+                setPokemonsList(favoritesPokemonsList);
+    
+                await console.log(favoritesPokemonsList);
+               }
 
-            await console.log(favoritesPokemonsList);
+           if(filterFavorites) {
+                fetchFavoritePokemons(); 
+           } else {
+            async function fetchPokemons() {
+                const pokemonsInfos = await getPokemonsList(notebookPageCounter);
+    
+                setPokemonsList(pokemonsInfos);
+    
+                await console.log(pokemonsInfos);
+               }
+    
+               fetchPokemons();
            }
-
-           fetchPokemons();
         }
         ,
         [filterFavorites]
@@ -54,7 +66,7 @@ export const Pokemons = () => {
                             description={pokemon.description}
                             listPage={notebookPageCounter}
                             id={
-                                (pokemonsList.indexOf(pokemon) + 1) + (10 * notebookPageCounter)
+                                filterFavorites ? pokemon.id : (pokemonsList.indexOf(pokemon) + 1) + (10 * notebookPageCounter)
                             } //Com esse cálculo do "id", acessamos o endpoint do pokemon correto quando acessamos seus detalhes após gerar outra lista
                         />
                 )

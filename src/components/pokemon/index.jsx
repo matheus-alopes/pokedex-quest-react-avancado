@@ -24,7 +24,7 @@ export const Pokemon = (props) => {
         <FontAwesomeIcon
           icon={faStar}
           style={{
-            color: isFavorite || filterFavorites ? "yellow" : "var(--button-background-color)"
+            color: isFavorite ? "yellow" : "var(--button-background-color)"
           }}
           onClick={handleToggleFavorite}
         />
