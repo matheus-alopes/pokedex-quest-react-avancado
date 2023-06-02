@@ -50,8 +50,6 @@ async function getFavoritePokemonsDetails(favoritePokemonsIds) {
             
                 const data = await response.json();
             
-                await console.log(data);
-            
                 const descriptionUrl = data.species.url;
             
                 const pokemonDescription = await getPokemonDescription(descriptionUrl);

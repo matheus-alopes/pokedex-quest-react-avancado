@@ -50,7 +50,7 @@ export const Pokemons = () => {
                             name={pokemon.name}
                             image={pokemon.image}
                             type={pokemon.type}
-                            key={pokemon.id}
+                            key={pokemon.name}
                             description={pokemon.description}
                             listPage={notebookPageCounter}
                             id={

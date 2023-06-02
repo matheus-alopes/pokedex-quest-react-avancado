@@ -46,6 +46,8 @@
    --pokemon-title-border-color: #000000;
 
    --toggler-initial-position: 3px;
+
+   --favorites-box-shadow: #1d81ed;
 }
 
 #notebook-container.dark {
@@ -81,4 +83,6 @@
    --pokemon-title-border-color: #ffffff;
 
    --toggler-initial-position: 53px;
+
+   --favorites-box-shadow: #1d81ed;
 }

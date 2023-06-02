@@ -25,11 +25,10 @@ const FilterFavoriteIcon = styled.div`
     font-size: 36px;
     cursor: pointer;
     border-radius: 10px;
-    background-color: rgb(255, 243, 128, 0.7);
     &:hover {
         box-shadow: var(--box-shadow) 0px 5px 15px;
         transition: 0.3s ease-in-out;
-      }
+      },
 `
 
 export { FilterFavoriteContainer, FilterFavoriteTitle, FilterFavoriteIcon }

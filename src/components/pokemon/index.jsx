@@ -6,7 +6,7 @@ import { useContext, useState, useEffect } from "react"
 import { FavoritesContext } from "../../contexts/favorites-provider"
 
 export const Pokemon = (props) => {
-  const { favoritePokemonsIds, toggleFavorite } = useContext(FavoritesContext)
+  const { favoritePokemonsIds, toggleFavorite, filterFavorites } = useContext(FavoritesContext)
   const [isFavorite, setIsFavorite] = useState(false)
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const Pokemon = (props) => {
         <FontAwesomeIcon
           icon={faStar}
           style={{
-            color: isFavorite ? "yellow" : "var(--button-background-color)"
+            color: isFavorite || filterFavorites ? "yellow" : "var(--button-background-color)"
           }}
           onClick={handleToggleFavorite}
         />
