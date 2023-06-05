@@ -7,7 +7,7 @@ const FavoritesProvider = (props) => {
 
   const [favoritesPokemonsList, setFavoritesPokemonsList] = useState([]);
 
-  const [filterFavorites, setFilterFavorites] = useState(false);
+  const [filterFavorites, setFilterFavorites] = useState(localStorage.filterFavorites ? true : false);
 
   const toggleFavorite = (pokemonId) => {
     if (favoritePokemonsIds.includes(pokemonId)) {
@@ -33,6 +33,22 @@ const FavoritesProvider = (props) => {
 
       localStorage.setItem("favoritesList", JSON.stringify(updatedFavorites));
     }
+
+    setFavoritesPokemonsList(
+      (oldList) => {
+        return oldList.map(
+          (pokemon) => {
+            if (pokemon.id === pokemonId) {
+              return {
+                ...pokemon,
+                isFavorite: !pokemon.isFavorite,
+              };
+            }
+            return pokemon;
+          }
+        );
+      }
+    );
   };
 
   return (

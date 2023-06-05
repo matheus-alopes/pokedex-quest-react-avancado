@@ -57,7 +57,7 @@ export const Pokemons = () => {
         <PokemonList>
             {   
                 pokemonsList.map (
-                    pokemon => 
+                    pokemon =>        
                         <Pokemon
                             name={pokemon.name}
                             image={pokemon.image}
@@ -72,5 +72,31 @@ export const Pokemons = () => {
                 )
             }        
         </ PokemonList>
+
+        // pokemonsList.map(
+        //     (pokemon) => {
+        //         const favoritePokemon = favoritesPokemonsList.find(
+        //           (favorite) => favorite.id === pokemon.id
+        //         );
+        //         const isFavorite = favoritePokemon ? favoritePokemon.isFavorite : false;
+              
+        //         return (
+        //           <Pokemon
+        //             name={pokemon.name}
+        //             image={pokemon.image}
+        //             type={pokemon.type}
+        //             key={pokemon.name}
+        //             description={pokemon.description}
+        //             listPage={notebookPageCounter}
+        //             id={
+        //               filterFavorites
+        //                 ? pokemon.id
+        //                 : pokemonsList.indexOf(pokemon) + 1 + 10 * notebookPageCounter
+        //             }
+        //             isFavorite={isFavorite}
+        //           />
+        //         );
+        //     }
+        // );
     )
 }
