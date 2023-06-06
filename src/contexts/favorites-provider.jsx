@@ -33,22 +33,6 @@ const FavoritesProvider = (props) => {
 
       localStorage.setItem("favoritesList", JSON.stringify(updatedFavorites));
     }
-
-    setFavoritesPokemonsList(
-      (oldList) => {
-        return oldList.map(
-          (pokemon) => {
-            if (pokemon.id === pokemonId) {
-              return {
-                ...pokemon,
-                isFavorite: !pokemon.isFavorite,
-              };
-            }
-            return pokemon;
-          }
-        );
-      }
-    );
   };
 
   return (

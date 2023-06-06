@@ -57,46 +57,28 @@ export const Pokemons = () => {
         <PokemonList>
             {   
                 pokemonsList.map (
-                    pokemon =>        
-                        <Pokemon
-                            name={pokemon.name}
-                            image={pokemon.image}
-                            type={pokemon.type}
-                            key={pokemon.name}
-                            description={pokemon.description}
-                            listPage={notebookPageCounter}
-                            id={
-                                filterFavorites ? pokemon.id : (pokemonsList.indexOf(pokemon) + 1) + (10 * notebookPageCounter)
-                            } //Com esse cálculo do "id", acessamos o endpoint do pokemon correto quando acessamos seus detalhes após gerar outra lista
-                        />
+                    (pokemon) =>        
+                        {
+                            var pokemonId = (pokemonsList.indexOf(pokemon) + 1) + (10 * notebookPageCounter) //Com esse cálculo do "id", acessamos o endpoint do pokemon correto quando acessamos seus detalhes após gerar outra lista
+
+                            if(pokemonId > 1010) {
+                                pokemonId = 10000 + (pokemonId % 1000) - 10 //Com esse cálculo, consigo acessar corretamente o endpoint dos pokemons que alteram seu id a partir da página 101
+                            }
+
+                            return (
+                                <Pokemon
+                                    name={pokemon.name}
+                                    image={pokemon.image}
+                                    type={pokemon.type}
+                                    key={pokemon.name}
+                                    description={pokemon.description}
+                                    listPage={notebookPageCounter}
+                                    id={filterFavorites ? pokemon.id : pokemonId}
+                                />
+                            )
+                        }
                 )
             }        
         </ PokemonList>
-
-        // pokemonsList.map(
-        //     (pokemon) => {
-        //         const favoritePokemon = favoritesPokemonsList.find(
-        //           (favorite) => favorite.id === pokemon.id
-        //         );
-        //         const isFavorite = favoritePokemon ? favoritePokemon.isFavorite : false;
-              
-        //         return (
-        //           <Pokemon
-        //             name={pokemon.name}
-        //             image={pokemon.image}
-        //             type={pokemon.type}
-        //             key={pokemon.name}
-        //             description={pokemon.description}
-        //             listPage={notebookPageCounter}
-        //             id={
-        //               filterFavorites
-        //                 ? pokemon.id
-        //                 : pokemonsList.indexOf(pokemon) + 1 + 10 * notebookPageCounter
-        //             }
-        //             isFavorite={isFavorite}
-        //           />
-        //         );
-        //     }
-        // );
     )
 }
