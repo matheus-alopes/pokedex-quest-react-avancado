@@ -35,7 +35,7 @@ export const Pokemon = (props) => {
         onClick={() => {
           localStorage.setItem("pageCounter", props.listPage);
 
-          console.log(props.id)
+          console.log(localStorage)
         }}
       >
         <LisItemLink>

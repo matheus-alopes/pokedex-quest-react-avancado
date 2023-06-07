@@ -9,8 +9,8 @@ export const FilterFavoriteSection = () => {
     const { favoritePokemonsIds, filterFavorites, setFilterFavorites, setFavoritesPokemonsList } = useContext(FavoritesContext);
 
     async function handdleFilterFavorite() {
-        if (filterFavorites) {
-            setFilterFavorites( () => false);
+        if(filterFavorites) {
+            setFilterFavorites(() => false);
         } else {
             const favoritesDetails = await getFavoritePokemonsDetails(favoritePokemonsIds);
 
@@ -18,7 +18,7 @@ export const FilterFavoriteSection = () => {
                 () => favoritesDetails
             );
 
-            setFilterFavorites( () => true);
+            setFilterFavorites(() => true);
         }
     }
 

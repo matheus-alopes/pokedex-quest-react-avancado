@@ -3,7 +3,7 @@ import { PageCounterContext } from "../../contexts/page-counter-provider"
 import { NextButton, NextButtonContainer, NextButtonImage, NextButtonText } from "./styles"
 
 export const NextButtonSection = (props) => {
-    const { setNotebookPageCounter } = useContext(PageCounterContext);
+    const { notebookPageCounter, setNotebookPageCounter } = useContext(PageCounterContext);
 
     function handleNext() {
         setNotebookPageCounter (
@@ -13,7 +13,10 @@ export const NextButtonSection = (props) => {
 
     return (
         <NextButtonContainer>
-                <NextButton onClick={handleNext}>
+                <NextButton
+                    onClick={handleNext} 
+                    disabled={notebookPageCounter > 129}
+                >
                     <NextButtonImage/>
                 </NextButton>
 

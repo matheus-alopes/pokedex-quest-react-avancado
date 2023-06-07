@@ -27,6 +27,22 @@ export const Pokemons = () => {
         [notebookPageCounter]
     )
 
+    // useEffect(
+    //     () => {
+    //         async function fetchFavoritePokemons() {
+    //             setPokemonsList(favoritesPokemonsList);
+    
+    //             await console.log(favoritesPokemonsList);
+    //            }
+
+    //        if(localStorage.filterFavorites == "true") {
+    //             fetchFavoritePokemons();
+    //        }
+    //     }
+    //     ,
+    //     [filterFavorites]
+    // )
+
     useEffect (
         () => {
             async function fetchFavoritePokemons() {
@@ -36,7 +52,10 @@ export const Pokemons = () => {
                }
 
            if(filterFavorites) {
-                fetchFavoritePokemons(); 
+                fetchFavoritePokemons();
+                console.log(localStorage);
+
+                // localStorage.setItem("filterFavorites", true);
            } else {
             async function fetchPokemons() {
                 const pokemonsInfos = await getPokemonsList(notebookPageCounter);
@@ -44,6 +63,8 @@ export const Pokemons = () => {
                 setPokemonsList(pokemonsInfos);
     
                 await console.log(pokemonsInfos);
+
+                // localStorage.setItem("filterFavorites", false);
                }
     
                fetchPokemons();

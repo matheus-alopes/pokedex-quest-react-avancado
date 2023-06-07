@@ -21,7 +21,7 @@ const MenuSection = () => {
     function handleInputPageNumberChange(event) {
         const newPageNumber = parseInt(event.target.value, 10) - 1; // Subtrai 1 para ajustar à indexação base 0
     
-        if (isNaN(newPageNumber) || newPageNumber < 0 || newPageNumber > 127) {
+        if (isNaN(newPageNumber) || newPageNumber < 0 || newPageNumber > 128) {
             // Verifica se o número da página não é válido (NaN, menor que 0 ou maior que 127)
             setInputPageNumber(""); // Define o valor vazio no estado
         } else {
