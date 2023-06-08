@@ -5,6 +5,7 @@ import { ThemeTogglerButtonContainer, ThemeTogglerContainer, ThemeTogglerTitle, 
 export const ThemeTogglerButton = () => {
     const body = document.getElementsByTagName("body")[0];
     const toggler = document.getElementById("toggler");
+    
     const {theme, toggleTheme} = useContext(ThemeContext);
 
     return (

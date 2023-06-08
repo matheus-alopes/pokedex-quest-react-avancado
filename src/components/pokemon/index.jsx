@@ -6,12 +6,18 @@ import { useContext, useState, useEffect } from "react"
 import { FavoritesContext } from "../../contexts/favorites-provider"
 
 export const Pokemon = (props) => {
-  const { favoritePokemonsIds, toggleFavorite, filterFavorites } = useContext(FavoritesContext)
+  const { favoritePokemonsIds, toggleFavorite } = useContext(FavoritesContext)
   const [isFavorite, setIsFavorite] = useState(false)
 
-  useEffect(() => {
-    setIsFavorite(favoritePokemonsIds.includes(props.id))
-  }, [favoritePokemonsIds, props.id])
+  useEffect(
+    () => {
+      setIsFavorite(
+        favoritePokemonsIds.includes(props.id)
+      )
+    }
+    , 
+    [favoritePokemonsIds, props.id]
+  )
 
   const handleToggleFavorite = () => {
     toggleFavorite(props.id)

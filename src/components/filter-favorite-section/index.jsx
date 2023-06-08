@@ -10,15 +10,15 @@ export const FilterFavoriteSection = () => {
 
     async function handdleFilterFavorite() {
         if(filterFavorites) {
-            setFilterFavorites(() => false);
+            setFilterFavorites(false);
         } else {
             const favoritesDetails = await getFavoritePokemonsDetails(favoritePokemonsIds);
 
             setFavoritesPokemonsList(
                 () => favoritesDetails
             );
-
-            setFilterFavorites(() => true);
+                
+            setFilterFavorites(true);
         }
     }
 
