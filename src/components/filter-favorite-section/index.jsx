@@ -2,11 +2,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FilterFavoriteContainer, FilterFavoriteIcon, FilterFavoriteTitle } from "./styles"
 import { getFavoritePokemonsDetails } from "../../services/getFavoritePokemons";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FavoritesContext } from "../../contexts/favorites-provider";
 
 export const FilterFavoriteSection = () => {
     const { favoritePokemonsIds, filterFavorites, setFilterFavorites, setFavoritesPokemonsList } = useContext(FavoritesContext);
+
+    useEffect(
+        ()=> {
+            localStorage.setItem("filterFavorites", filterFavorites)
+        }
+        ,
+        [filterFavorites]
+    )
 
     async function handdleFilterFavorite() {
         if(filterFavorites) {
@@ -17,7 +25,7 @@ export const FilterFavoriteSection = () => {
             setFavoritesPokemonsList(
                 () => favoritesDetails
             );
-                
+
             setFilterFavorites(true);
         }
     }

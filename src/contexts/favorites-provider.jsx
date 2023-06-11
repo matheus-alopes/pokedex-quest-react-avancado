@@ -7,7 +7,7 @@ const FavoritesProvider = (props) => {
 
   const [favoritesPokemonsList, setFavoritesPokemonsList] = useState([]);
 
-  const [filterFavorites, setFilterFavorites] = useState(false);
+  const [filterFavorites, setFilterFavorites] = useState(1==2 ? true : false); //localStorage.filterFavorites ?
 
   const toggleFavorite = (pokemonId) => {
     if (favoritePokemonsIds.includes(pokemonId)) {
