@@ -41,7 +41,13 @@ export const Pokemon = (props) => {
         onClick={() => {
           localStorage.setItem("pageCounter", props.listPage);
 
-          console.log(localStorage)
+          console.log(localStorage);
+
+          if(localStorage.filterFavorites == "true") {
+            console.log("ihuuu")
+          } else {
+            console.log("xerecaa")
+          }
         }}
       >
         <LisItemLink>

@@ -1,4 +1,6 @@
 import { createContext, useEffect, useState } from "react";
+import { getFavoritePokemonsDetails } from "../services/getFavoritePokemons"
+
 
 const FavoritesContext = createContext();
 
@@ -7,7 +9,35 @@ const FavoritesProvider = (props) => {
 
   const [favoritesPokemonsList, setFavoritesPokemonsList] = useState([]);
 
-  const [filterFavorites, setFilterFavorites] = useState(1==2 ? true : false); //localStorage.filterFavorites ?
+  const [filterFavorites, setFilterFavorites] = useState(
+    () => {
+      if(localStorage.filterFavorites == "true") {
+        console.log("ihuuu")
+  
+        return true
+      } else {
+        console.log("xerecaa")
+  
+        return false
+      }
+    }
+  );
+
+  useEffect(
+    () => {
+      async function fetchFavoritePokemonsList() {
+        return await getFavoritePokemonsDetails(favoritePokemonsIds);
+      }
+
+      const favoritesDetails = fetchFavoritePokemonsList();
+
+      setFavoritesPokemonsList(
+        () => favoritesDetails
+      );
+    }
+    ,
+    []
+  )
 
   const toggleFavorite = (pokemonId) => {
     if (favoritePokemonsIds.includes(pokemonId)) {

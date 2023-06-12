@@ -11,21 +11,21 @@ export const Pokemons = () => {
 
     const [pokemonsList, setPokemonsList] = useState([])
 
-    useEffect (
-        () => {
-           async function fetchPokemons() {
-            const pokemonsInfos = await getPokemonsList(notebookPageCounter);
+    // useEffect (
+    //     () => {
+    //        async function fetchPokemons() {
+    //         const pokemonsInfos = await getPokemonsList(notebookPageCounter);
 
-            setPokemonsList(pokemonsInfos);
+    //         setPokemonsList(pokemonsInfos);
 
-            await console.log(pokemonsInfos);
-           }
+    //         await console.log(pokemonsInfos);
+    //        }
 
-           fetchPokemons();
-        }
-        ,
-        [notebookPageCounter]
-    )
+    //        fetchPokemons();
+    //     }
+    //     ,
+    //     [notebookPageCounter]
+    // )
 
     useEffect (
         () => {
@@ -33,9 +33,9 @@ export const Pokemons = () => {
                 setPokemonsList(favoritesPokemonsList);
     
                 await console.log(favoritesPokemonsList);
-               }
+            }
 
-           if(filterFavorites) {
+           if(filterFavorites || localStorage.filterFavorites == "true") {
                 fetchFavoritePokemons();
 
                 console.log(localStorage);
@@ -52,7 +52,7 @@ export const Pokemons = () => {
            }
         }
         ,
-        [filterFavorites]
+        [notebookPageCounter, filterFavorites, localStorage.filterFavorites]
     )
 
     return (    
