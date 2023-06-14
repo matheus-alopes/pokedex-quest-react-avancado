@@ -9,19 +9,7 @@ const FavoritesProvider = (props) => {
 
   const [favoritesPokemonsList, setFavoritesPokemonsList] = useState(localStorage.favoritesListDetails ? JSON.parse(localStorage.favoritesListDetails) : []);
 
-  const [filterFavorites, setFilterFavorites] = useState(
-    () => {
-      if(localStorage.filterFavorites == "true") {
-        console.log("o filter favorites está ativado")
-  
-        return true
-      } else {
-        console.log("o filter favorites não está ativado")
-  
-        return false
-      }
-    }
-  );
+  const [filterFavorites, setFilterFavorites] = useState(localStorage.filterFavorites == "true" ? true : false)
 
   useEffect(
     ()=> {
@@ -38,7 +26,7 @@ const FavoritesProvider = (props) => {
       fetchFavoritesDetails()    
     }
     ,
-    [favoritePokemonsIds]
+    [favoritesPokemonsList]
   )
 
   const toggleFavorite = (pokemonId) => {

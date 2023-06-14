@@ -23,13 +23,27 @@ export const Pokemons = () => {
                 fetchFavoritePokemons();
 
                 console.log(localStorage);
+           } else if (favoritesPokemonsList == []) {
+                //renderizar página de "nothing to show here"
+
+                async function fetchPokemons() {
+                    const pokemonsInfos = await getPokemonsList(notebookPageCounter);
+        
+                    setPokemonsList(pokemonsInfos);
+        
+                    await console.log(pokemonsInfos);
+               }
+    
+               console.log("cabeça da minha pika")
+
+               fetchPokemons();
            } else {
-            async function fetchPokemons() {
-                const pokemonsInfos = await getPokemonsList(notebookPageCounter);
-    
-                setPokemonsList(pokemonsInfos);
-    
-                await console.log(pokemonsInfos);
+                async function fetchPokemons() {
+                    const pokemonsInfos = await getPokemonsList(notebookPageCounter);
+        
+                    setPokemonsList(pokemonsInfos);
+        
+                    await console.log(pokemonsInfos);
                }
     
                fetchPokemons();
