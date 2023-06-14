@@ -7,16 +7,16 @@ const FavoritesContext = createContext();
 const FavoritesProvider = (props) => {
   const [favoritePokemonsIds, setFavoritePokemonsIds] = useState(localStorage.favoritesList ? JSON.parse(localStorage.favoritesList) : []);
 
-  const [favoritesPokemonsList, setFavoritesPokemonsList] = useState([]);
+  const [favoritesPokemonsList, setFavoritesPokemonsList] = useState(localStorage.favoritesListDetails ? JSON.parse(localStorage.favoritesListDetails) : []);
 
   const [filterFavorites, setFilterFavorites] = useState(
     () => {
       if(localStorage.filterFavorites == "true") {
-        console.log("ihuuu")
+        console.log("o filter favorites está ativado")
   
         return true
       } else {
-        console.log("xerecaa")
+        console.log("o filter favorites não está ativado")
   
         return false
       }
@@ -24,19 +24,21 @@ const FavoritesProvider = (props) => {
   );
 
   useEffect(
-    () => {
-      async function fetchFavoritePokemonsList() {
-        return await getFavoritePokemonsDetails(favoritePokemonsIds);
+    ()=> {
+      async function fetchFavoritesDetails() {
+        const favoritesDetails =  await getFavoritePokemonsDetails(favoritePokemonsIds)
+
+        setFavoritesPokemonsList(
+          () => favoritesDetails
+        )
+
+        localStorage.setItem("favoritesListDetails", JSON.stringify(favoritesPokemonsList));
       }
 
-      const favoritesDetails = fetchFavoritePokemonsList();
-
-      setFavoritesPokemonsList(
-        () => favoritesDetails
-      );
+      fetchFavoritesDetails()    
     }
     ,
-    []
+    [favoritePokemonsIds]
   )
 
   const toggleFavorite = (pokemonId) => {

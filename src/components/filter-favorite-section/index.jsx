@@ -6,7 +6,7 @@ import { useContext, useEffect } from "react";
 import { FavoritesContext } from "../../contexts/favorites-provider";
 
 export const FilterFavoriteSection = () => {
-    const { favoritePokemonsIds, filterFavorites, setFilterFavorites, setFavoritesPokemonsList } = useContext(FavoritesContext);
+    const { filterFavorites, setFilterFavorites } = useContext(FavoritesContext);
 
     useEffect(
         ()=> {
@@ -17,17 +17,7 @@ export const FilterFavoriteSection = () => {
     )
 
     async function handdleFilterFavorite() {
-        if(filterFavorites) {
-            setFilterFavorites(false);
-        } else {
-            const favoritesDetails = await getFavoritePokemonsDetails(favoritePokemonsIds);
-
-            setFavoritesPokemonsList(
-                () => favoritesDetails
-            );
-
-            setFilterFavorites(true);
-        }
+       filterFavorites ? setFilterFavorites(false) : setFilterFavorites(true)
     }
 
     return (

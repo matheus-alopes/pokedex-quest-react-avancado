@@ -6,7 +6,7 @@ import { useContext, useState, useEffect } from "react"
 import { FavoritesContext } from "../../contexts/favorites-provider"
 
 export const Pokemon = (props) => {
-  const { favoritePokemonsIds, toggleFavorite } = useContext(FavoritesContext)
+  const { favoritePokemonsIds, toggleFavorite, favoritesPokemonsList } = useContext(FavoritesContext)
   const [isFavorite, setIsFavorite] = useState(false)
 
   useEffect(
@@ -42,12 +42,6 @@ export const Pokemon = (props) => {
           localStorage.setItem("pageCounter", props.listPage);
 
           console.log(localStorage);
-
-          if(localStorage.filterFavorites == "true") {
-            console.log("ihuuu")
-          } else {
-            console.log("xerecaa")
-          }
         }}
       >
         <LisItemLink>

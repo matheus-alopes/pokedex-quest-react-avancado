@@ -11,22 +11,6 @@ export const Pokemons = () => {
 
     const [pokemonsList, setPokemonsList] = useState([])
 
-    // useEffect (
-    //     () => {
-    //        async function fetchPokemons() {
-    //         const pokemonsInfos = await getPokemonsList(notebookPageCounter);
-
-    //         setPokemonsList(pokemonsInfos);
-
-    //         await console.log(pokemonsInfos);
-    //        }
-
-    //        fetchPokemons();
-    //     }
-    //     ,
-    //     [notebookPageCounter]
-    // )
-
     useEffect (
         () => {
             async function fetchFavoritePokemons() {
