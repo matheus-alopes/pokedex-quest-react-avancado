@@ -38,11 +38,7 @@ export const Pokemon = (props) => {
 
       <Link
         to={`/pokemon/${props.id}`}
-        onClick={() => {
-          localStorage.setItem("pageCounter", props.listPage);
-
-          console.log(localStorage);
-        }}
+        onClick={localStorage.setItem("pageCounter", props.listPage)}
       >
         <LisItemLink>
           <PokemonImageTypeContainer>
