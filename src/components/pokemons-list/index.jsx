@@ -23,12 +23,6 @@ export const Pokemons = () => {
 
             if (filterFavorites || localStorage.filterFavorites == "true") {
                 fetchFavoritePokemons();
-
-                if (favoritesPokemonsList.length === 0) {
-                    console.log("minha pika")
-
-                    setErrorPage(true);
-                }
             }
             else {
                 async function fetchPokemons() {
@@ -46,6 +40,16 @@ export const Pokemons = () => {
         }
         ,
         [notebookPageCounter, filterFavorites, localStorage.filterFavorites]
+    )
+
+    useEffect(
+        () => {
+            if (filterFavorites && favoritesPokemonsList.length === 0) {
+                setErrorPage(true);
+            }
+        }
+        ,
+        [favoritesPokemonsList]
     )
 
     if(errorPage) {
