@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FilterFavoriteContainer, FilterFavoriteIcon, FilterFavoriteTitle } from "./styles"
-import { getFavoritePokemonsDetails } from "../../services/getFavoritePokemons";
 import { useContext, useEffect } from "react";
 import { FavoritesContext } from "../../contexts/favorites-provider";
 
@@ -24,14 +23,7 @@ export const FilterFavoriteSection = () => {
         <FilterFavoriteContainer>
             <FilterFavoriteTitle>Filter Favorites</FilterFavoriteTitle>
 
-            <FilterFavoriteIcon
-                style={
-                    {
-                        backgroundColor: filterFavorites ? "var(--background-color)" : "rgb(255, 243, 128, 0.2)",
-                        boxShadow: filterFavorites ? "var(--favorites-box-shadow) 0px 5px 15px" : "none"
-                    }
-                }
-            >
+            <FilterFavoriteIcon filterFavorites={filterFavorites}>
                 <FontAwesomeIcon
                     icon={faStar}
                     style={

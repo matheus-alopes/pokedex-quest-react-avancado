@@ -6,7 +6,7 @@ import { useContext, useState, useEffect } from "react"
 import { FavoritesContext } from "../../contexts/favorites-provider"
 
 export const Pokemon = (props) => {
-  const { favoritePokemonsIds, toggleFavorite, favoritesPokemonsList } = useContext(FavoritesContext)
+  const { favoritePokemonsIds, toggleFavorite } = useContext(FavoritesContext)
   const [isFavorite, setIsFavorite] = useState(false)
 
   useEffect(

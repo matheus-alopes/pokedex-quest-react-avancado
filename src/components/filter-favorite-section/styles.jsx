@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const FilterFavoriteContainer = styled.div`
     width: 160px;
@@ -25,6 +25,17 @@ const FilterFavoriteIcon = styled.div`
     font-size: 36px;
     cursor: pointer;
     border-radius: 10px;
+    background-color: var(--filter-favorites-box-color);
+
+    ${
+        (props) =>
+            props.filterFavorites &&
+                css`
+                background-color: var(--background-color);
+                box-shadow: var(--box-shadow) 0px 5px 15px;
+                `
+    }
+
     &:hover {
         box-shadow: var(--box-shadow) 0px 5px 15px;
         transition: 0.3s ease-in-out;

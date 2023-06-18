@@ -47,7 +47,8 @@
 
    --toggler-initial-position: 3px;
 
-   --favorites-box-shadow: #1d81ed;
+   --filter-favorites-box-color: rgb(255, 243, 128, 0.6);
+   --filter-favorites-box-shadow: #1d81ed;
 }
 
 #notebook-container.dark {
@@ -84,5 +85,7 @@
 
    --toggler-initial-position: 53px;
 
-   --favorites-box-shadow: #1d81ed;
+
+   --filter-favorites-box-color: rgb(255, 243, 128, 0.2);
+   --filter-favorites-box-shadow: #1d81ed;
 }
