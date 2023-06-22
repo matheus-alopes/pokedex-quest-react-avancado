@@ -44,12 +44,12 @@ export const Pokemons = () => {
 
     useEffect(
         () => {
-            if (filterFavorites && favoritesPokemonsList.length === 0) {
+            if (filterFavorites && favoritesPokemonsList.length == 0) {
                 setErrorPage(true);
             }
         }
         ,
-        [favoritesPokemonsList]
+        [favoritesPokemonsList, filterFavorites]
     )
 
     if(errorPage) {

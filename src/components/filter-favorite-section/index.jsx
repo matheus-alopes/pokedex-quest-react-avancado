@@ -15,7 +15,7 @@ export const FilterFavoriteSection = () => {
         [filterFavorites]
     )
 
-    async function handdleFilterFavorite() {
+    function handdleFilterFavorite() {
        filterFavorites ? setFilterFavorites(false) : setFilterFavorites(true)
     }
 

@@ -11,23 +11,37 @@ const FavoritesProvider = (props) => {
 
   const [filterFavorites, setFilterFavorites] = useState(localStorage.filterFavorites == "true" ? true : false)
 
+  function areArraysEqual(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
   useEffect(
-    ()=> {
+    () => {
       async function fetchFavoritesDetails() {
-        const favoritesDetails =  await getFavoritePokemonsDetails(favoritePokemonsIds)
+        const favoritesDetails = await getFavoritePokemonsDetails(favoritePokemonsIds);
 
-        setFavoritesPokemonsList(
-          () => favoritesDetails
-        )
+        if (!areArraysEqual(favoritesDetails, favoritesPokemonsList)) {
+          setFavoritesPokemonsList(favoritesDetails);
 
-        localStorage.setItem("favoritesListDetails", JSON.stringify(favoritesPokemonsList));
+          localStorage.setItem("favoritesListDetails", JSON.stringify(favoritesDetails));
+        }
       }
 
-      fetchFavoritesDetails()    
+      fetchFavoritesDetails();
     }
     ,
-    [favoritesPokemonsList]
-  )
+    [favoritesPokemonsList, favoritePokemonsIds]
+  );
 
   const toggleFavorite = (pokemonId) => {
     if (favoritePokemonsIds.includes(pokemonId)) {
@@ -42,8 +56,8 @@ const FavoritesProvider = (props) => {
       );
 
       localStorage.setItem("favoritesList", JSON.stringify(updatedFavorites));
-    } 
-    
+    }
+
     else {
       console.log(`pokemon ${pokemonId} adicionado aos favoritos`);
 
