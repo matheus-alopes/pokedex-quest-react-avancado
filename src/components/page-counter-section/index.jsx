@@ -1,10 +1,6 @@
-import { useContext } from "react";
 import { PageCounter, PageCounterSectionContainer, PageCounterSectionTitle } from "./styles";
-import { ThemeContext } from "../../contexts/theme-provider";
 
 export const PageCounterSection = (props) => {
-    const {theme, toggleTheme} = useContext(ThemeContext);
-
     return (
         <PageCounterSectionContainer>
             <PageCounterSectionTitle>

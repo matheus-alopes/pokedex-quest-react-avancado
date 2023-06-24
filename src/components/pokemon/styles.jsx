@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled, {css} from "styled-components"
+import interrogation from "../../assets/images/interrogation.png"
 
 const ListItemContainer = styled.li`
   width: 500px;
@@ -49,6 +50,9 @@ const ListItemImage = styled.div`
   };
   background-repeat: no-repeat;
   background-size: contain;
+  ${
+    props => props.image == interrogation && css `background-size: 40%`
+  };
   background-color: var(--pokemon-list-image-container-color);
   background-position: center;
 `

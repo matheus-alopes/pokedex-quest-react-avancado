@@ -1,4 +1,4 @@
-import interrogation from "../assets/images/interrogation.png"
+import interrogation from "../assets/images/interrogation-smaller.png"
 
 async function getAbilityDetails(abilityUrl) {
     const response = await fetch(abilityUrl);

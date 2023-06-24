@@ -20,8 +20,19 @@ export const Pokemon = (props) => {
   )
 
   const handleToggleFavorite = () => {
-    toggleFavorite(props.id)
-    setIsFavorite(!isFavorite)
+    if(favoritePokemonsIds.length <= 11) {
+      toggleFavorite(props.id)
+      setIsFavorite(!isFavorite)
+    } 
+
+    if(favoritePokemonsIds.length >= 11 && isFavorite) {
+      toggleFavorite(props.id)
+      setIsFavorite(!isFavorite)
+    }
+
+    if(favoritePokemonsIds.length > 11 && !isFavorite) {
+      window.alert("You can only have 12 favorite Pokémon")
+    }
   }
 
   return (

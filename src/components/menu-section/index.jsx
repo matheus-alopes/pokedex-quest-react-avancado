@@ -23,9 +23,9 @@ const MenuSection = () => {
     
         if (isNaN(newPageNumber) || newPageNumber < 0 || newPageNumber > 128) {
             // Verifica se o número da página não é válido (NaN, menor que 0 ou maior que 127)
-            setInputPageNumber(""); // Define o valor vazio no estado
+            setInputPageNumber(""); //Define o valor vazio no estado
         } else {
-            setNotebookPageCounter(newPageNumber); // Define o novo valor do notebookPageCounter
+            setNotebookPageCounter(newPageNumber); //Define o novo valor do notebookPageCounter
         }
     }
 

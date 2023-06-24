@@ -15,7 +15,7 @@ export const NextButtonSection = (props) => {
         <NextButtonContainer>
                 <NextButton
                     onClick={handleNext} 
-                    disabled={notebookPageCounter > 129}
+                    disabled={notebookPageCounter > 128}
                 >
                     <NextButtonImage/>
                 </NextButton>
