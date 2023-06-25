@@ -2,15 +2,15 @@ import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getPokemonDetails } from "../../services/getPokemonDetails"
 import { BackButtonSection } from "../back-button-section"
-import { PokemonAbilityContainer, PokemonAbilityDescription, PokemonAbilityName, PokemonAbilitiesContainer, PokemonContainer, PokemonImage, PokemonImageContainer, PokemonMovesContainer, PokemonName, PokemonType, PokemonTypeContainer, PokemonTypeList, PokemonAbilitiesTitle, PokemonAbilities, PokemonImageAndNameContainer, PokemonMove, PokemonMoves, PokemonMovesTitle } from "./styles"
+import { PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonStatsContainer, PokemonStatsTitle, PokemonStatsList, PokemonStatContainer, PokemonStatName, PokemonStat, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer, PokemonMovesTitle, PokemonMoves, PokemonMove } from "./styles"
 import { ThemeContext } from "../../contexts/theme-provider"
 
 export const PokemonDetails = () => {
-    const {id} = useParams();
+    const { id } = useParams();
 
     const [pokemon, setPokemon] = useState({})
-    
-    const {theme} = useContext(ThemeContext)
+
+    const { theme } = useContext(ThemeContext)
 
     useEffect(
         () => {
@@ -51,13 +51,30 @@ export const PokemonDetails = () => {
                     </PokemonTypeContainer>
                 </PokemonImageAndNameContainer>
 
+                <PokemonStatsContainer>
+                    <PokemonStatsTitle>Stats</PokemonStatsTitle>
+
+                    <PokemonStatsList>
+                        {
+                            pokemon.stats && pokemon.stats.map(
+                                stat =>
+                                    <PokemonStatContainer>
+                                        <PokemonStatName>{stat.statName}:</ PokemonStatName>
+
+                                        <PokemonStat>{stat.statValue}</PokemonStat>
+                                    </PokemonStatContainer>
+                            )
+                        }
+                    </PokemonStatsList>
+                </PokemonStatsContainer>
+
                 <PokemonAbilitiesContainer>
                     <PokemonAbilitiesTitle>ABILITIES</PokemonAbilitiesTitle>
 
                     <PokemonAbilities>
                         {
                             pokemon.abilities && pokemon.abilities.map(
-                                ability => 
+                                ability =>
                                     <PokemonAbilityContainer key={ability.slot}>
                                         <PokemonAbilityName>
                                             {ability.ability.name}
@@ -78,13 +95,13 @@ export const PokemonDetails = () => {
                     <PokemonMoves>
                         {
                             pokemon.moves && pokemon.moves.map(
-                                move => 
+                                move =>
                                     <PokemonMove key={move.move.name}>{move.move.name}</PokemonMove>
                             )
                         }
                     </PokemonMoves>
                 </PokemonMovesContainer>
-            </ PokemonContainer> 
+            </ PokemonContainer>
         </ div>
     )
 }

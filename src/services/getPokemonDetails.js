@@ -18,6 +18,7 @@ async function getPokemonDetails(pokemonId) {
     const pokemon = {
         name: data.name,
         types: data.types,
+        stats: [],
         abilities: data.abilities,
         moves: data.moves,
     }
@@ -35,6 +36,18 @@ async function getPokemonDetails(pokemonId) {
     if(pokemon.image == null) {
         pokemon.image = interrogation;
     }
+
+    await Promise.all(
+        data.stats.map(
+            async stat => {
+                const statName = stat.stat.name
+
+                const statValue = stat.base_stat
+
+                return pokemon.stats.push({statName, statValue})
+            }
+        )
+    )
 
     await Promise.all(
         pokemon.abilities.map(

@@ -3,7 +3,8 @@ import styled from "styled-components"
 const PokemonContainer = styled.div`
     margin: 40px 30px 0 30px;
     display: grid;
-    grid-template-areas: "base-infos abilities"
+    grid-template-areas: "base-infos stats"
+                         "abilities abilities"
                          "moves moves";
     grid-template-columns: 1fr 1fr;
     color: var(--pokemon-details-font-color);
@@ -60,8 +61,52 @@ const PokemonType = styled.li`
     border-radius: 5px;
 `
 
+const PokemonStatsContainer = styled.div`
+    grid-area: stats;
+    padding: 20px 30px;
+    border: 1px solid var(--pokemon-details-border-color);
+    border-radius: 15px;
+    background-color: var(--details-container-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const PokemonStatsTitle = styled.h2`
+    width: 80%;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid var(--pokemon-title-border-color);
+`
+
+const PokemonStatsList = styled.ul`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+`
+
+const PokemonStatContainer = styled.li`
+    display: flex;
+    align-items: center;
+    gap: 15px;
+`
+
+const PokemonStatName = styled.p`
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 24px;
+`
+
+const PokemonStat = styled.p`
+    font-size: 20px;
+`
+
 const PokemonAbilitiesContainer = styled.div`
     grid-area: abilities;
+    margin-top: 40px;
     padding: 20px 0;
     border: 1px solid var(--pokemon-details-border-color);
     border-radius: 15px;
@@ -122,7 +167,7 @@ const PokemonAbilityDescription = styled.div`
 
 const PokemonMovesContainer = styled.div`
     grid-area: moves;
-    margin-top: 60px;
+    margin-top: 40px;
     padding: 20px;
     max-height: 400px;
     border: 1px solid var(--pokemon-details-border-color);
@@ -159,4 +204,4 @@ const PokemonMove = styled.li`
     border: 1px solid var(--pokemon-details-border-color);
 `
 
-export {PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer, PokemonMovesTitle, PokemonMoves, PokemonMove}
+export {PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonStatsContainer, PokemonStatsTitle, PokemonStatsList, PokemonStatContainer, PokemonStatName, PokemonStat, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer, PokemonMovesTitle, PokemonMoves, PokemonMove}
