@@ -15,6 +15,9 @@ const ListItemContainer = styled.li`
     box-shadow: var(--box-shadow) 0px 5px 15px;
     transition: 0.3s ease-in-out;
   }
+  @media (max-width: 1350px) {
+    width: 90%;
+  }
 `
 
 const FavoritePokemonContainer = styled.div`

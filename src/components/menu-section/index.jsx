@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { PageCounterContext } from "../../contexts/page-counter-provider";
 import { PageCounterSection } from "../page-counter-section"
 import { ThemeTogglerButton } from "../theme-toggler-button"
-import { MenuSectionContainer } from "./styles";
+import { MenuBurguer, MenuSectionContainer } from "./styles";
 import { FilterFavoriteSection } from "../filter-favorite-section";
 
 const MenuSection = () => {
@@ -29,17 +29,29 @@ const MenuSection = () => {
         }
     }
 
+    function handleToggleMenuBurguer() {
+        
+    }
+
     return (
-        <MenuSectionContainer>
-            <PageCounterSection
-                inputPageValue= { inputPageNumber }
-                inputPageNumberChangeFunction={ handleInputPageNumberChange }
-            />
+        <>
+            <MenuBurguer>
+                <div></div>
+                <div></div>
+                <div></div>
+            </MenuBurguer>
 
-            <FilterFavoriteSection />
+            <MenuSectionContainer>
+                <PageCounterSection
+                    inputPageValue= { inputPageNumber }
+                    inputPageNumberChangeFunction={ handleInputPageNumberChange }
+                />
 
-            <ThemeTogglerButton />
-        </MenuSectionContainer>
+                <FilterFavoriteSection />
+
+                <ThemeTogglerButton />
+            </MenuSectionContainer>
+        </>
     )
 }
 

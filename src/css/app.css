@@ -42,3 +42,10 @@ body {
     flex-direction: column;
     position: relative;
 }
+
+@media screen and (max-width: 800px) {
+    #notebook-container {
+        grid-template-areas: "header header header"
+                             "pokemons pokemons pokemons";
+    }
+}
