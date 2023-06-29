@@ -9,6 +9,15 @@ const ErrorPageContainer = styled.div`
     gap: 20px;
     font-size: 32px;
     color: var(--header-title-font-color);
+    @media (max-width: 800px) {
+        font-size: 26px;
+    }
+    @media (max-width: 620px) {
+        font-size: 20px;
+    }
+    @media (max-width: 500px) {
+        font-size: 16px;
+    }
 `
 
 export {ErrorPageContainer, }

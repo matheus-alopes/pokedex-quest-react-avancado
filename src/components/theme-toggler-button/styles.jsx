@@ -11,16 +11,25 @@ const ThemeTogglerContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.24) 4px 4px 8px;
+    @media (max-width: 800px) {
+        width: 130px;
+    };
 `
 
 const ThemeTogglerTitle = styled.h2`
     font-weight: 500;
+    @media (max-width: 800px) {
+        font-size: 20px;
+    };
 `
 
 const ThemeTogglerButtonContainer = styled.div`
     width: 120px;
     height: 90px;
     display: flex;
+    @media (max-width: 800px) {
+        width: 100px;
+    };
 `
 
 const TogglerButton = styled.div`
@@ -35,6 +44,10 @@ const TogglerButton = styled.div`
     opacity: 0.8;
     border: 5px inset var(--button-border-color);
     position: relative;
+    @media (max-width: 800px) {
+        width: 40px;
+        height: 88px;
+    };
 `
 
 const Toggler = styled.div`
@@ -44,6 +57,10 @@ const Toggler = styled.div`
     background-color: var(--button-font-color);
     position: absolute;
     top: var(--toggler-initial-position);
+    @media (max-width: 800px) {
+        width: 20px;
+        height: 20px;
+    };
 `
 
 const ThemesContainer = styled.div`
@@ -54,6 +71,10 @@ const ThemesContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
+    @media (max-width: 800px) {
+        padding: 10px 0;
+        font-size: 18px;
+    };
 `
 
 const LightTheme = styled.p`

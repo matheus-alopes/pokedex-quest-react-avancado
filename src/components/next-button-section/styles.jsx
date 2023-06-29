@@ -13,6 +13,10 @@ const NextButtonContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: 800px) {
+        width: 90px;
+        height: 130px;
+    };
 `
 
 const NextButton = styled.button`
@@ -34,6 +38,10 @@ const NextButton = styled.button`
     align-items: center;
     justify-content: center;
     transform: rotate(180deg);
+    @media (max-width: 800px) {
+        width: 60px;
+        height: 60px;
+    };
 `
 
 const ArrowAnimation = keyframes`
@@ -58,10 +66,17 @@ const NextButtonImage = styled.div`
     background-size: contain;
     background-position: center;
     animation: ${ArrowAnimation} 1s ease-in-out infinite;
+    @media (max-width: 800px) {
+        width: 30px;
+        height: 30px;
+    };
 `
 
 const NextButtonText = styled.p`
     color: var(--button-font-color);
+    @media (max-width: 800px) {
+        font-size: 22px;
+    };
 `
 
 export {NextButtonContainer, NextButton, NextButtonImage, NextButtonText}

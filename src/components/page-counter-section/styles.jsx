@@ -14,6 +14,12 @@ const PageCounterSectionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    @media (max-width: 800px) {
+        width: 100px;
+        height: 100px;
+        font-size: 14px;
+        gap: 5px;
+    }
 `
 
 const PageCounterSectionTitle = styled.h2`
@@ -31,6 +37,11 @@ const PageCounter = styled.input`
     color: var(--button-font-color);
     &:focus {
         outline: none;
+    };
+    @media (max-width: 800px) {
+        width: 70px;
+        height: 40px;
+        font-size: 24px;
     }
 `
 

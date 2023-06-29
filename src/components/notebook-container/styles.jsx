@@ -24,6 +24,9 @@ const Header = styled.header`
 const HeaderTitle = styled.h1`
     font-size: 40px;
     color: var(--header-title-font-color);
+    @media (max-width: 700px) {
+        font-size: 34px;
+    };
 `
 
 const HeaderImage = styled.img`

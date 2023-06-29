@@ -5,8 +5,10 @@ import { ThemeTogglerButton } from "../theme-toggler-button"
 import { MenuBurguer, MenuSectionContainer } from "./styles";
 import { FilterFavoriteSection } from "../filter-favorite-section";
 
-const MenuSection = () => {
+const MenuSection = (props) => {
     const [inputPageNumber, setInputPageNumber] = useState("");
+
+    const [clicked, setClicked] = useState(false)
 
     const { notebookPageCounter, setNotebookPageCounter } = useContext(PageCounterContext);
 
@@ -29,21 +31,21 @@ const MenuSection = () => {
         }
     }
 
-    function handleToggleMenuBurguer() {
-        
+    function handleMenuToggle() {
+        setClicked(!clicked);
     }
 
     return (
         <>
-            <MenuBurguer>
+            <MenuBurguer clicked = { clicked } onClick={ handleMenuToggle }>
                 <div></div>
                 <div></div>
                 <div></div>
             </MenuBurguer>
 
-            <MenuSectionContainer>
+            <MenuSectionContainer clicked = { clicked }>
                 <PageCounterSection
-                    inputPageValue= { inputPageNumber }
+                    inputPageValue={ inputPageNumber }
                     inputPageNumberChangeFunction={ handleInputPageNumberChange }
                 />
 

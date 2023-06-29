@@ -6,6 +6,9 @@ const BackButtonContainer = styled.div`
     ${
         props => props.height == "small" && css `
             height: 152px;
+            @media (max-width: 800px) {
+                height: 130px;
+            }
         `
     }
 
@@ -24,6 +27,9 @@ const BackButtonContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media (max-width: 800px) {
+        width: 90px;
+    };
 `
 
 const BackButton = styled.button`
@@ -61,6 +67,10 @@ const BackButton = styled.button`
     display:flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 800px) {
+        width: 60px;
+        height: 60px;
+    };
 `
 
 const ArrowAnimation = keyframes`
@@ -85,10 +95,17 @@ const BackButtonImage = styled.div`
     background-size: contain;
     background-position: center;
     animation: ${ArrowAnimation} 1s ease-in-out infinite;
+    @media (max-width: 800px) {
+        width: 30px;
+        height: 30px;
+    };
 `
 
 const BackButtonText = styled.p`
     color: var(--button-font-color);
+    @media (max-width: 800px) {
+        font-size: 22px;
+    };
 `
 
 export {BackButtonContainer, BackButton, BackButtonImage, BackButtonText}
