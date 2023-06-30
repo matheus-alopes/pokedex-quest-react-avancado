@@ -25,7 +25,7 @@ const HeaderTitle = styled.h1`
     font-size: 40px;
     color: var(--header-title-font-color);
     @media (max-width: 700px) {
-        font-size: 34px;
+        font-size: 32px;
     };
 `
 
@@ -33,6 +33,11 @@ const HeaderImage = styled.img`
     width: 50px;
     height: 50px;
     margin-right: 20px;
+    @media (max-width: 700px) {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    };
 `
 
 export {NotebookContainer, Header, HeaderTitle, HeaderImage}
