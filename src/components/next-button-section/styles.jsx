@@ -17,6 +17,12 @@ const NextButtonContainer = styled.div`
         width: 90px;
         height: 130px;
     };
+    @media (max-width: 600px) {
+        grid-area: buttons;
+        height: auto;
+        margin-top: 15px;
+        background-color: transparent;
+    };
 `
 
 const NextButton = styled.button`
@@ -76,6 +82,9 @@ const NextButtonText = styled.p`
     color: var(--button-font-color);
     @media (max-width: 800px) {
         font-size: 22px;
+    };
+    @media (max-width: 600px) {
+        display: none;
     };
 `
 

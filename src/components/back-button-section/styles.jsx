@@ -9,6 +9,12 @@ const BackButtonContainer = styled.div`
             @media (max-width: 800px) {
                 height: 130px;
             }
+            @media (max-width: 600px) {
+                grid-area: buttons;
+                height: auto;
+                margin-top: 15px;
+                background-color: transparent;
+            };
         `
     }
 
@@ -105,6 +111,9 @@ const BackButtonText = styled.p`
     color: var(--button-font-color);
     @media (max-width: 800px) {
         font-size: 22px;
+    };
+    @media (max-width: 600px) {
+        display: none;
     };
 `
 

@@ -31,7 +31,7 @@ const MenuBurguer = styled.div`
     display: none;
     div:nth-child(n+1):nth-child(-n+3) {
         width: 100%;
-        height: 5px;
+        height: 4px;
         background-color: var(--button-font-color);
         margin: 6px 0;
         border-radius: 4px;
@@ -57,10 +57,10 @@ const MenuBurguer = styled.div`
     };
     @media (max-width: 800px) {
         position absolute;
-        top: 140px;
+        top: 145px;
         left: 10px;
         display: block;
         cursor: pointer;
-    }
+    };
 `
 export { MenuSectionContainer, MenuBurguer }

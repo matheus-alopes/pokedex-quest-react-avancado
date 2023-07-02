@@ -15,10 +15,14 @@ const NotebookContainer = styled.div`
 const Header = styled.header`
     grid-area: header;
     width: 100%;
+    height: fit-content;
     padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 600px) {
+        padding-top: 0;
+    };
 `
 
 const HeaderTitle = styled.h1`
@@ -26,6 +30,9 @@ const HeaderTitle = styled.h1`
     color: var(--header-title-font-color);
     @media (max-width: 700px) {
         font-size: 32px;
+    };
+    @media (max-width: 550px) {
+        font-size: 28px;
     };
 `
 

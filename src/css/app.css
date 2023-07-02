@@ -19,14 +19,12 @@ body {
 }
 
 #notebook-container header {
-    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #notebook-container header h1 {
-    font-size: 40px;
     color: var(--header-title-font-color);
 }
 
@@ -47,5 +45,13 @@ body {
     #notebook-container {
         grid-template-areas: "header header header"
                              "pokemons pokemons pokemons";
+    }
+}
+@media screen and (max-width: 600px) {
+    #notebook-container {
+        grid-template-areas: "buttons buttons buttons"
+                             "header header header"
+                             "pokemons pokemons pokemons";
+        grid-template-rows: auto auto 100%;
     }
 }
