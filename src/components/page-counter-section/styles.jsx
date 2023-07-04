@@ -14,11 +14,16 @@ const PageCounterSectionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    @media (max-width: 1250px) {
+        width: 120px;
+        height: 120px;
+        font-size: 16px;
+        gap: 5px;
+    };
     @media (max-width: 800px) {
         width: 100px;
         height: 100px;
         font-size: 14px;
-        gap: 5px;
     }
 `
 

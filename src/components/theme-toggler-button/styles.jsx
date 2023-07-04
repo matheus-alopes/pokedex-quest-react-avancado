@@ -11,6 +11,9 @@ const ThemeTogglerContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     box-shadow: rgba(0, 0, 0, 0.24) 4px 4px 8px;
+    @media (max-width: 1250px) {
+        width: 140px;
+    };
     @media (max-width: 800px) {
         width: 130px;
     };
@@ -18,6 +21,9 @@ const ThemeTogglerContainer = styled.div`
 
 const ThemeTogglerTitle = styled.h2`
     font-weight: 500;
+    @media (max-width: 1250px) {
+        font-size: 22px;
+    };
     @media (max-width: 800px) {
         font-size: 20px;
     };

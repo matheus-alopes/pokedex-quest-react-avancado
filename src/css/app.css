@@ -3,8 +3,8 @@ body {
 }
 
 #notebook-container {
-    min-height: 100vh;
     width: 95vw;
+    min-height: 100vh;
     max-width: 1400px;
     margin: auto;
     background-image: var(--notebook-background-image);
@@ -41,17 +41,24 @@ body {
     position: relative;
 }
 
+@media screen and (max-width: 1250px) {
+    #notebook-container {
+        grid-template-columns: 160px 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 800px) {
     #notebook-container {
         grid-template-areas: "header header header"
                              "pokemons pokemons pokemons";
     }
 }
+
 @media screen and (max-width: 600px) {
     #notebook-container {
         grid-template-areas: "buttons buttons buttons"
                              "header header header"
                              "pokemons pokemons pokemons";
-        grid-template-rows: auto auto 100%;
+        grid-template-rows: min-content min-content min-content;
     }
 }

@@ -13,6 +13,10 @@ const FilterFavoriteContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 7px;
+    @media (max-width: 1250px) {
+        width: 140px;
+        height: 120px;
+    };
     @media (max-width: 800px) {
         width: 130px;
         height: 110px;
@@ -22,6 +26,9 @@ const FilterFavoriteContainer = styled.div`
 const FilterFavoriteTitle = styled.h2`
     font-weight: 500;
     text-align: center;
+    @media (max-width: 1250px) {
+        font-size: 22px;
+    };
     @media (max-width: 800px) {
         font-size: 20px;
     };
@@ -47,7 +54,9 @@ const FilterFavoriteIcon = styled.div`
         box-shadow: var(--box-shadow) 0px 5px 15px;
         transition: 0.3s ease-in-out;
     };
-
+    @media (max-width: 1250px) {
+        font-size: 32px;
+    };
     @media (max-width: 800px) {
         font-size: 30px;
     };

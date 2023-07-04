@@ -16,6 +16,11 @@ const ListItemContainer = styled.li`
     transition: 0.3s ease-in-out;
   }
   @media (max-width: 1350px) {
+    // width: 90%;
+    width: 400px;
+    padding: 12px 0 0 12px;
+  };
+  @media (max-width: 1100px) {
     width: 90%;
   };
   @media (max-width: 650px) {
@@ -32,6 +37,9 @@ const FavoritePokemonContainer = styled.div`
   position: absolute;
   top: 4px;
   right: 10px;
+  @media (max-width: 1350px) {
+    font-size: 24px;
+  };
   @media (max-width: 650px) {
     font-size: 22px;
   };
@@ -41,8 +49,7 @@ const LisItemLink = styled.div`
   height: 100%;
   display: grid;
   grid-template-areas: "img-type name"
-                      "img-type description";
-  
+                      "img-type description"; 
   @media (max-width: 400px) {
     grid-template-areas: "name name"
                          " img-type img-type";
@@ -80,6 +87,10 @@ const ListItemImage = styled.div`
   };
   background-color: var(--pokemon-list-image-container-color);
   background-position: center;
+  @media (max-width: 1350px) {
+    width: 120px;
+    height: 120px;
+  };
   @media (max-width: 650px) {
     width: 100px;
     height: 100px;
@@ -111,6 +122,9 @@ const PokemonType = styled.li`
     border-radius: 5px;
     background-color: var(--pokemon-list-description-container-color);
     color: var(--pokemon-list-description-font-color);
+    @media (max-width: 1350px) {
+      font-size: 14px;
+    };
     @media (max-width: 650px) {
       padding: 2px 4px;
       font-size: 12px;
@@ -123,10 +137,14 @@ const ListItemName = styled.p`
   padding: 15px 3px 0 15px;
   font-weight: bold;
   font-size: 28px;
+  word-break: break-word;
   color: var(--pokemon-list-name-font-color);
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  @media (max-width: 1350px) {
+    font-size: 22px;
+  };
   @media (max-width: 650px) {
     font-size: 20px;
   };
@@ -158,6 +176,12 @@ const ListItemDescription = styled.p`
   };
   &::-webkit-scrollbar-track {
     background: var(--pokemon-ability-container-color);
+  };
+  @media (max-width: 1350px) {
+    margin: 11px 0 0 11px;
+    padding: 13px;
+    font-size: 14px;
+    line-height: 16px;
   };
   @media (max-width: 650px) {
     margin: 10px 0 0 10px;
