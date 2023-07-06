@@ -73,6 +73,9 @@ const PokemonImage = styled.img`
     max-height: 220px;
     position: absolute;
     bottom: 3px;
+    @media (max-width: 1350px) {
+        bottom: -5px;
+    };
     @media (max-width: 380px) {
         width: 150px;
         max-height: 190px;
