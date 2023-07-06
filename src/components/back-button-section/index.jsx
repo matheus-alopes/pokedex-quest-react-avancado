@@ -4,7 +4,7 @@ import { BackButton, BackButtonContainer, BackButtonImage, BackButtonText } from
 export const BackButtonSection = (props) => {
     return (
         <BackButtonContainer height={props.height}>
-                <Link to="/">
+                <Link to="/pokedex-quest-react-avancado">
                     <BackButton onClick={props.clickFunction} height={props.height} disabled={props.disabled}>
                         <BackButtonImage/>
                     </BackButton>
