@@ -8,13 +8,32 @@ const PokemonContainer = styled.div`
                          "moves moves";
     grid-template-columns: 1fr 1fr;
     color: var(--pokemon-details-font-color);
+    @media (max-width: 950px) {
+        grid-template-areas: "base-infos"
+                             "stats"
+                             "abilities"
+                             "moves";
+        grid-template-columns: 1fr;
+    @media (max-width: 500px) {
+        margin-left: 20px;
+    };
+    @media (max-width: 400px) {
+        margin: 30px 10px 0 10px;
+    };                             
 `
 
 const PokemonImageAndNameContainer = styled.div`
     grid-area: base-infos;
+    margin-right: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 950px) {
+        margin-bottom: 25px;                             
+    };
+    @media (max-width: 450px) {
+        margin-right: 0;                             
+    };
 `
 
 const PokemonImageContainer = styled.div`
@@ -30,6 +49,23 @@ const PokemonImageContainer = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    @media (max-width: 1350px) {
+        width: 90%;
+    };
+    @media (max-width: 1020px) {
+        min-width: 350px;
+        min-height: 200px;
+    };
+    @media (max-width: 600px) {
+        min-width: 300px;
+        min-height: 200px;
+    };
+    @media (max-width: 500px) {
+        min-width: 250px;
+    };
+    @media (max-width: 380px) {
+        min-width: 220px;
+    };
 `
 
 const PokemonImage = styled.img`
@@ -37,12 +73,26 @@ const PokemonImage = styled.img`
     max-height: 220px;
     position: absolute;
     bottom: 3px;
+    @media (max-width: 380px) {
+        width: 150px;
+        max-height: 190px;
+    };
 `
 
 const PokemonName = styled.h1`
     margin: 15px 0;
     text-transform: uppercase;
+    text-align: center;
     color: var(--pokemon-details-name-color);
+    @media (max-width: 1350px) {
+        font-size: 28px;
+    };
+    @media (max-width: 1020px) {
+        font-size: 24px;
+    };
+    @media (max-width: 450px) {
+        font-size: 20px;
+    };
 `
 
 const PokemonTypeContainer = styled.div`
@@ -70,6 +120,9 @@ const PokemonStatsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 450px) {
+        padding: 10px 20px;
+    };
 `
 
 const PokemonStatsTitle = styled.h2`
@@ -98,10 +151,28 @@ const PokemonStatName = styled.p`
     text-transform: uppercase;
     font-weight: 500;
     font-size: 24px;
+    @media (max-width: 1350px) {
+        font-size: 20px;
+    };
+    @media (max-width: 1020px) {
+        font-size: 18px;
+    };
+    @media (max-width: 450px) {
+        font-size: 14px;
+    };
 `
 
 const PokemonStat = styled.p`
     font-size: 20px;
+    @media (max-width: 1350px) {
+        font-size: 18px;
+    };
+    @media (max-width: 1020px) {
+        font-size: 16px;
+    };
+    @media (max-width: 450px) {
+        font-size: 14px;
+    };
 `
 
 const PokemonAbilitiesContainer = styled.div`
@@ -138,6 +209,9 @@ const PokemonAbilityContainer = styled.li`
     border: 1px solid black;
     border-radius: 15px;
     background-color: var(--pokemon-ability-container-color);
+    @media (max-width: 720px) {
+        max-width: 150px;
+    };
 `
 
 const PokemonAbilityName = styled.p`
@@ -202,6 +276,10 @@ const PokemonMove = styled.li`
     padding: 3px;
     display: inline-block;
     border: 1px solid var(--pokemon-details-border-color);
+    @media (max-width: 500px) {
+        margin: 2px 8px;
+        font-size: 14px;
+    };
 `
 
 export {PokemonContainer, PokemonImageAndNameContainer, PokemonImageContainer, PokemonImage, PokemonName, PokemonTypeContainer, PokemonTypeList, PokemonType, PokemonStatsContainer, PokemonStatsTitle, PokemonStatsList, PokemonStatContainer, PokemonStatName, PokemonStat, PokemonAbilitiesContainer, PokemonAbilitiesTitle, PokemonAbilities, PokemonAbilityContainer, PokemonAbilityName, PokemonAbilityDescription, PokemonMovesContainer, PokemonMovesTitle, PokemonMoves, PokemonMove}

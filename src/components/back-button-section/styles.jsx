@@ -7,6 +7,7 @@ const BackButtonContainer = styled.div`
         props => props.height == "small" && css `
             height: 152px;
             @media (max-width: 800px) {
+                width: 90px;
                 height: 130px;
             }
             @media (max-width: 600px) {
@@ -23,6 +24,15 @@ const BackButtonContainer = styled.div`
             height: 100%;
             position: absolute;
             left: 0;
+            @media (max-width: 800px) {
+                width: 90px;
+            }
+            @media (max-width: 600px) {
+                width: 70px;
+            };
+            @media (max-width: 450px) {
+                width: 65px;
+            };
         `
     }
     
@@ -33,9 +43,6 @@ const BackButtonContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media (max-width: 800px) {
-        width: 90px;
-    };
 `
 
 const BackButton = styled.button`

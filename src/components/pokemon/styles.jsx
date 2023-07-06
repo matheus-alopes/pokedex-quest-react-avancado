@@ -16,7 +16,6 @@ const ListItemContainer = styled.li`
     transition: 0.3s ease-in-out;
   }
   @media (max-width: 1350px) {
-    // width: 90%;
     width: 400px;
     padding: 12px 0 0 12px;
   };
